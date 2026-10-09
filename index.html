@@ -100,11 +100,11 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 .ci::before{content:"";position:absolute;left:12%;right:12%;top:5%;height:42%;border-radius:50%;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0))}
 .ci svg{position:relative}
-.rail{display:block;position:absolute;z-index:60;left:0;right:0;top:calc(583*var(--u) - var(--ib) - 10px);bottom:0;pointer-events:none}
-.rail-row{position:sticky;top:var(--top);height:var(--ib);display:flex;align-items:center;justify-content:space-between;padding:0 var(--edger) 0 var(--edge);pointer-events:none}
+.rail{display:block;position:fixed;z-index:60;left:0;right:0;top:var(--top);height:var(--ib);pointer-events:none}
+.rail-row{position:relative;height:var(--ib);display:flex;align-items:center;justify-content:space-between;padding:0 var(--edger) 0 var(--edge);pointer-events:none}
 .ci{display:grid}
 @media (min-width:900px){
-  .rail{display:block;position:absolute;z-index:60;left:0;right:0;top:calc(583*var(--u));bottom:0;pointer-events:none}
+  .rail{display:block;position:absolute;z-index:60;left:0;right:0;top:calc(583*var(--u));bottom:0;height:auto;pointer-events:none}
   .rail-row{position:sticky;top:var(--navtop);height:calc(103*var(--u));display:flex;align-items:center;justify-content:space-between;padding:0 var(--edger) 0 var(--edge);pointer-events:none}
   .ci{display:grid}
 }
