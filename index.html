@@ -96,7 +96,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
   -webkit-backdrop-filter:blur(18px) saturate(190%) brightness(1.08);backdrop-filter:blur(18px) saturate(190%) brightness(1.08);
   box-shadow:inset 0 1.5px 1px rgba(255,255,255,.65),inset 0 -1.5px 2px rgba(255,255,255,.18),inset 0 0 14px rgba(255,255,255,.08),0 8px 26px rgba(0,0,0,.38);
   -webkit-tap-highlight-color:transparent;isolation:isolate;overflow:hidden;
-  transition:transform .3s cubic-bezier(.3,1.4,.5,1),background .3s ease}
+  transition:transform .3s cubic-bezier(.3,1.4,.5,1),background .3s ease,opacity .25s ease,visibility .25s}
 .ci::before{content:"";position:absolute;left:12%;right:12%;top:5%;height:42%;border-radius:50%;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0))}
 .ci svg{position:relative}
@@ -250,7 +250,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
     for(var i=0;i<icons.length;i++){
       var e=icons[i].style;
       if(mqD.matches){e.opacity='';e.visibility='';}
-      else{e.opacity=q.toFixed(3);e.visibility=q<.02?'hidden':'visible';}
+      else{var on=p>=.98;e.opacity=on?'1':'0';e.visibility=on?'visible':'hidden';}
     }
     var fl=nav.getBoundingClientRect().top<=stickTop+.5;
     if(fl!==floating){floating=fl;nav.classList.toggle('is-floating',fl)}
