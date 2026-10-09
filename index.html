@@ -12,7 +12,7 @@
   --ink:#181818;--paper:#f2f2f2;--chip:#cccccc;--ibg:#181818;--ifg:#f2f2f2;
   --font:"Diodrum Arabic",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --w:min(100vw,820px);--u:calc(var(--w) / 1080);
-  --ib:44px;--top:calc(env(safe-area-inset-top,0px) + 12px);--navtop:var(--top);
+  --ib:40px;--top:calc(env(safe-area-inset-top,0px) + 12px);--navtop:calc(var(--top) + var(--ib) + 10px);
   --edge:calc(14px + env(safe-area-inset-left,0px));--edger:calc(14px + env(safe-area-inset-right,0px));
   --navl:82;--navw:941;
   box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px);
@@ -100,7 +100,9 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 .ci::before{content:"";position:absolute;left:12%;right:12%;top:5%;height:42%;border-radius:50%;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0))}
 .ci svg{position:relative}
-.rail{display:none}
+.rail{display:block;position:absolute;z-index:60;left:0;right:0;top:calc(583*var(--u) - var(--ib) - 10px);bottom:0;pointer-events:none}
+.rail-row{position:sticky;top:var(--top);height:var(--ib);display:flex;align-items:center;justify-content:space-between;padding:0 var(--edger) 0 var(--edge);pointer-events:none}
+.ci{display:grid}
 @media (min-width:900px){
   .rail{display:block;position:absolute;z-index:60;left:0;right:0;top:calc(583*var(--u));bottom:0;pointer-events:none}
   .rail-row{position:sticky;top:var(--navtop);height:calc(103*var(--u));display:flex;align-items:center;justify-content:space-between;padding:0 var(--edger) 0 var(--edge);pointer-events:none}
@@ -296,7 +298,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
     els.forEach(function(e){e.classList.add('fade')});
     setTimeout(function(){paint(l);els.forEach(function(e){e.classList.remove('fade')})},200);
   }
-  try{var sv=localStorage.getItem('ab-lang');if(sv&&T[sv]&&window.matchMedia('(min-width:900px)').matches)paint(sv)}catch(e){}
+  try{var sv=localStorage.getItem('ab-lang');if(sv&&T[sv]&&true)paint(sv)}catch(e){}
   langBtn.addEventListener('click',function(){
     var n=lang==='en'?'ar':'en';setLang(n,true);
     try{localStorage.setItem('ab-lang',n)}catch(e){}
