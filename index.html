@@ -219,7 +219,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
   var homeBtn=document.getElementById('homeBtn'),langBtn=document.getElementById('langBtn');
   var tag=document.getElementById('tag'),role=document.getElementById('role');
   var btns=Array.prototype.slice.call(nav.querySelectorAll('button'));
-  var hl=cap.querySelector('.hl'),icons=[];
+  var hl=cap.querySelector('.hl'),icons=[homeBtn,langBtn],mqD=window.matchMedia('(min-width:900px) and (min-aspect-ratio:1/1)');
   var dk=false,floating=false,ticking=false,R=1,stickTop=0,done=false;
 
   function playLogo(){hl.classList.remove('play');void hl.getBoundingClientRect();hl.classList.add('play')}
@@ -249,8 +249,8 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
     var q=Math.max(0,Math.min(1,(p-.5)/.5));
     for(var i=0;i<icons.length;i++){
       var e=icons[i].style;
-      e.opacity=q.toFixed(3);
-      e.visibility=q<.02?'hidden':'visible';
+      if(mqD.matches){e.opacity='';e.visibility='';}
+      else{e.opacity=q.toFixed(3);e.visibility=q<.02?'hidden':'visible';}
     }
     var fl=nav.getBoundingClientRect().top<=stickTop+.5;
     if(fl!==floating){floating=fl;nav.classList.toggle('is-floating',fl)}
