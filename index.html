@@ -67,7 +67,7 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--font);-
 
 /* icon bar: sticky = scroll-smooth, no JS positioning */
 .navwrap{position:absolute;z-index:50;left:calc(var(--navl)*var(--u));width:calc(var(--navw)*var(--u));top:calc(583*var(--u));bottom:0;pointer-events:none}
-.nav{position:sticky;top:var(--navtop);pointer-events:auto;width:100%;height:calc(103*var(--u));
+.nav{position:-webkit-sticky;position:sticky;top:var(--navtop);pointer-events:auto;width:100%;height:calc(103*var(--u));
   box-sizing:border-box;padding:0 calc(32*var(--u));display:flex;align-items:center;gap:calc(14*var(--u));
   background:var(--paper);border-radius:999px;transition:box-shadow .4s ease}
 .nav.is-floating{box-shadow:0 10px 30px rgba(0,0,0,.45)}
@@ -189,7 +189,9 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--font);-
         </g>
       </svg>
     </div>
-    <div class="navwrap">
+  </div>
+  <div class="more"></div>
+  <div class="navwrap">
       <nav class="nav" id="nav" aria-label="Main">
         <button type="button" data-go="top">HOME</button>
         <button type="button">SERVICES</button>
@@ -197,8 +199,6 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--font);-
         <button type="button">CONTACT</button>
       </nav>
     </div>
-  </div>
-  <div class="more"></div>
 </main>
 
 <script>
