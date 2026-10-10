@@ -12,7 +12,7 @@
   --ink:#181818;--paper:#f2f2f2;--chip:#cccccc;--ibg:#181818;--ifg:#f2f2f2;
   --font:"Diodrum Arabic",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --w:min(100vw,820px);--u:calc(var(--w) / 1080);
-  --ib:40px;--top:calc(env(safe-area-inset-top,0px) + 12px);--navtop:calc(var(--top) + var(--ib) + 10px);
+  --ib:40px;--top:calc(env(safe-area-inset-top,0px) + 6px);--navtop:calc(var(--top) + var(--ib) + 6px);
   --edge:calc(14px + env(safe-area-inset-left,0px));--edger:calc(14px + env(safe-area-inset-right,0px));
   --navl:82;--navw:941;
   box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px);
@@ -244,7 +244,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
     ticking=false;
     var y=Math.max(0,window.pageYOffset||0);
     var p=Math.min(1,y/R);
-    cap.style.opacity=(1-p).toFixed(3);
+    cap.style.opacity=(1-p).toFixed(3);tag.style.opacity=p>=.98?'0':(1-p).toFixed(3);
     cap.style.pointerEvents=p>.9?'none':'';
     var q=Math.max(0,Math.min(1,(p-.5)/.5));
     for(var i=0;i<icons.length;i++){
