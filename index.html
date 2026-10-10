@@ -140,9 +140,11 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 @keyframes sheen{0%{transform:translateX(40px)}42%,100%{transform:translateX(680px)}}
 
 /* ---------- services ---------- */
-.svc{position:relative;z-index:2;width:calc(872*var(--u));margin:0 auto;padding-top:calc(90*var(--u));font-family:"Diodrum About",var(--font)}
+.svc{position:relative;z-index:2;width:calc(872*var(--u));margin:0 auto;padding-top:calc(200*var(--u));font-family:"Diodrum About",var(--font)}
 .svc-head{display:flex;align-items:center;gap:calc(44*var(--u))}
 .svc-head svg{display:block;flex:none;width:calc(290*var(--u));height:auto;overflow:visible}
+.svc-tx{display:flex;flex-direction:column;gap:calc(14*var(--u))}
+.svc-tx p{margin:0;color:var(--paper);opacity:.8;font-weight:500;font-size:calc(30*var(--u));line-height:1}
 .svc-head h2{margin:0;color:var(--paper);font-weight:700;font-size:calc(62*var(--u));line-height:1}
 .glassbox{position:relative;margin-top:calc(64*var(--u));width:100%;aspect-ratio:872/740;border-radius:calc(48*var(--u));overflow:hidden;
   border:calc(5*var(--u)) solid #cfcfcf;box-sizing:border-box;background:linear-gradient(90deg,#b4b4b4,#1c1c1c);isolation:isolate}
@@ -153,15 +155,39 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 @keyframes gsheen{0%{transform:translateX(-160%) skewX(-14deg)}42%,100%{transform:translateX(480%) skewX(-14deg)}}
 @media (prefers-reduced-motion:reduce){.glassbox .band{animation:none;opacity:0}}
 
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(28*var(--u));margin-top:calc(64*var(--u))}
+.pcard{position:relative;container-type:inline-size;aspect-ratio:1/1.04;border-radius:calc(34*var(--u));overflow:hidden;isolation:isolate;
+  border:1px solid rgba(255,255,255,.3);background:linear-gradient(150deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 60%,rgba(255,255,255,.1));
+  -webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);
+  box-shadow:inset 0 1.5px 1px rgba(255,255,255,.45),inset 0 -1px 2px rgba(255,255,255,.12),0 10px 30px rgba(0,0,0,.35);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+@media (hover:hover){.pcard:hover{transform:translateY(-4px)}}
+.pc-logo{position:absolute;top:-3%;right:-6%;width:88%;height:auto;z-index:0;overflow:visible;pointer-events:none}
+.pc-t{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 7cqw 8cqw;display:flex;flex-direction:column;gap:2.2cqw;color:var(--paper)}
+.pc-t b{font-weight:700;font-size:8.6cqw;line-height:1.08}
+.pc-t span{font-weight:500;font-size:6.2cqw;line-height:1;opacity:.82}
+
+.socials{display:flex;justify-content:flex-start;gap:calc(44*var(--u));margin-top:calc(64*var(--u))}
+.ci.soc{--ib:calc(150*var(--u))}
+.soc svg{width:46%;height:auto}
+
 /* PC: header logo on the left, whole group on the right */
 @media (min-width:900px) and (min-aspect-ratio:1/1){
   .capin{width:100%}
   .capin svg{left:clamp(56px,7.5vw,144px);top:50%;width:clamp(300px,23vw,440px);height:auto;aspect-ratio:887/253.5;transform:translateY(-50%)}
   .stage{height:calc(1500*var(--u))}
-  .svc{width:min(44vw,640px);margin-left:calc(clamp(56px,7.5vw,144px) - (100vw - var(--w)) / 2);margin-right:0;padding-top:clamp(40px,6vw,110px)}
+  .svc{width:min(44vw,640px);margin-left:calc(clamp(56px,7.5vw,144px) - (100vw - var(--w)) / 2);margin-right:0;padding-top:clamp(80px,10.5vw,200px)}
   .svc-head{gap:clamp(18px,2vw,34px)}
+  .pf{width:min(62vw,980px)}
+  .ct{width:auto;margin-right:0}
+  .socials{justify-content:flex-start;gap:clamp(16px,2vw,32px);margin-top:clamp(24px,3vw,52px)}
+  .ci.soc{--ib:clamp(52px,4.5vw,82px)}
+  .pgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,28px);margin-top:clamp(24px,3vw,52px)}
+  .pcard{border-radius:clamp(16px,1.7vw,30px)}
   .svc-head svg{width:clamp(120px,10.5vw,190px)}
   .svc-head h2{font-size:clamp(30px,3.3vw,62px)}
+  .svc-tx{gap:clamp(6px,.7vw,12px)}
+  .svc-tx p{font-size:clamp(14px,1.45vw,26px)}
   .glassbox{margin-top:clamp(24px,3vw,52px);border-width:3px;border-radius:clamp(20px,2.4vw,40px)}
   .more{height:max(60svh,420px)}
   .about{left:calc(clamp(56px,7.5vw,144px) - (100vw - var(--w)) / 2);width:min(40vw,660px);top:calc(1085*var(--u));transform:translateY(-50%) translateY(24px)}
@@ -261,6 +287,46 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
       <i class="band"></i>
     </div>
   </section>
+  <section class="svc pf" id="portfolio">
+    <div class="svc-head">
+      <svg id="pfLogo" viewBox="92 254 506 288" role="img" aria-label="ab">
+        <defs><path id="pfScratch" d=""/></defs>
+        <g id="pfStrokes" fill="none" stroke="#f2f2f2" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></g>
+        <g id="pfUi"></g>
+        <g id="pfPen" opacity="0"><g transform="scale(2.4)"><path d="M0 0 L7 -4 L24 -26 L31 -19 L12 -3 Z" fill="#181818" stroke="#f2f2f2" stroke-width="1.8" stroke-linejoin="round"/><circle cx="27.5" cy="-22.5" r="3" fill="#f2f2f2"/></g></g>
+      </svg>
+      <div class="svc-tx"><h2 id="pfT">PORTFOLIO</h2><p id="pfS" data-t="sel">Selected work</p></div>
+    </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <linearGradient id="gq2" gradientUnits="userSpaceOnUse" x1="103" y1="0" x2="329" y2="0"><stop offset="0" stop-color="#d6d6ce"/><stop offset="1" stop-color="#8f8f8a"/></linearGradient>
+      <linearGradient id="gb2" gradientUnits="userSpaceOnUse" x1="355" y1="0" x2="581" y2="0"><stop offset="0" stop-color="#d6d6ce"/><stop offset="1" stop-color="#8f8f8a"/></linearGradient>
+    </defs></svg>
+    <div class="pgrid">
+      <div class="pcard"><svg class="pc-logo" viewBox="98 267 488 263" aria-hidden="true"><g stroke="#d8d8d8" stroke-opacity=".75" stroke-width="5" stroke-linejoin="miter" fill="none"><use href="#q1"/><use href="#q2"/><use href="#b1"/><use href="#b2"/></g><g fill="url(#gq2)"><use href="#q1"/><use href="#q2"/></g><g fill="url(#gb2)"><use href="#b1"/><use href="#b2"/></g><g mask="url(#lm)"><rect x="95" y="265" width="495" height="270" fill="url(#gloss)"/><g class="sheen"><polygon points="0,262 62,262 -8,535 -70,535" fill="url(#band)"/></g></g></svg><div class="pc-t"><b data-t="pc0">Brand Identity</b></div></div>
+      <div class="pcard"><svg class="pc-logo" viewBox="98 267 488 263" aria-hidden="true"><g stroke="#d8d8d8" stroke-opacity=".75" stroke-width="5" stroke-linejoin="miter" fill="none"><use href="#q1"/><use href="#q2"/><use href="#b1"/><use href="#b2"/></g><g fill="url(#gq2)"><use href="#q1"/><use href="#q2"/></g><g fill="url(#gb2)"><use href="#b1"/><use href="#b2"/></g><g mask="url(#lm)"><rect x="95" y="265" width="495" height="270" fill="url(#gloss)"/><g class="sheen"><polygon points="0,262 62,262 -8,535 -70,535" fill="url(#band)"/></g></g></svg><div class="pc-t"><b data-t="pc1">Logo Design</b></div></div>
+      <div class="pcard"><svg class="pc-logo" viewBox="98 267 488 263" aria-hidden="true"><g stroke="#d8d8d8" stroke-opacity=".75" stroke-width="5" stroke-linejoin="miter" fill="none"><use href="#q1"/><use href="#q2"/><use href="#b1"/><use href="#b2"/></g><g fill="url(#gq2)"><use href="#q1"/><use href="#q2"/></g><g fill="url(#gb2)"><use href="#b1"/><use href="#b2"/></g><g mask="url(#lm)"><rect x="95" y="265" width="495" height="270" fill="url(#gloss)"/><g class="sheen"><polygon points="0,262 62,262 -8,535 -70,535" fill="url(#band)"/></g></g></svg><div class="pc-t"><b data-t="pc2">Motion Graphics</b></div></div>
+      <div class="pcard"><svg class="pc-logo" viewBox="98 267 488 263" aria-hidden="true"><g stroke="#d8d8d8" stroke-opacity=".75" stroke-width="5" stroke-linejoin="miter" fill="none"><use href="#q1"/><use href="#q2"/><use href="#b1"/><use href="#b2"/></g><g fill="url(#gq2)"><use href="#q1"/><use href="#q2"/></g><g fill="url(#gb2)"><use href="#b1"/><use href="#b2"/></g><g mask="url(#lm)"><rect x="95" y="265" width="495" height="270" fill="url(#gloss)"/><g class="sheen"><polygon points="0,262 62,262 -8,535 -70,535" fill="url(#band)"/></g></g></svg><div class="pc-t"><b data-t="pc3">Social Media</b></div></div>
+      <div class="pcard"><svg class="pc-logo" viewBox="98 267 488 263" aria-hidden="true"><g stroke="#d8d8d8" stroke-opacity=".75" stroke-width="5" stroke-linejoin="miter" fill="none"><use href="#q1"/><use href="#q2"/><use href="#b1"/><use href="#b2"/></g><g fill="url(#gq2)"><use href="#q1"/><use href="#q2"/></g><g fill="url(#gb2)"><use href="#b1"/><use href="#b2"/></g><g mask="url(#lm)"><rect x="95" y="265" width="495" height="270" fill="url(#gloss)"/><g class="sheen"><polygon points="0,262 62,262 -8,535 -70,535" fill="url(#band)"/></g></g></svg><div class="pc-t"><b data-t="pc4">Packaging</b></div></div>
+      <div class="pcard"><svg class="pc-logo" viewBox="98 267 488 263" aria-hidden="true"><g stroke="#d8d8d8" stroke-opacity=".75" stroke-width="5" stroke-linejoin="miter" fill="none"><use href="#q1"/><use href="#q2"/><use href="#b1"/><use href="#b2"/></g><g fill="url(#gq2)"><use href="#q1"/><use href="#q2"/></g><g fill="url(#gb2)"><use href="#b1"/><use href="#b2"/></g><g mask="url(#lm)"><rect x="95" y="265" width="495" height="270" fill="url(#gloss)"/><g class="sheen"><polygon points="0,262 62,262 -8,535 -70,535" fill="url(#band)"/></g></g></svg><div class="pc-t"><b data-t="pc5">UI Design</b></div></div>
+    </div>
+  </section>
+  <section class="svc ct" id="contact">
+    <div class="svc-head">
+      <svg id="ctLogo" viewBox="92 254 506 288" role="img" aria-label="ab">
+        <defs><path id="ctScratch" d=""/></defs>
+        <g id="ctStrokes" fill="none" stroke="#f2f2f2" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></g>
+        <g id="ctUi"></g>
+        <g id="ctPen" opacity="0"><g transform="scale(2.4)"><path d="M0 0 L7 -4 L24 -26 L31 -19 L12 -3 Z" fill="#181818" stroke="#f2f2f2" stroke-width="1.8" stroke-linejoin="round"/><circle cx="27.5" cy="-22.5" r="3" fill="#f2f2f2"/></g></g>
+      </svg>
+      <h2 id="ctT">CONTACT</h2>
+    </div>
+    <div class="socials">
+      <button type="button" class="ci soc" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.2c.3-.4.8-.4 1 0l.8 1.5c.1.3 0 .6-.2.8l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.6c.2-.2.5-.3.8-.2l1.5.8c.4.2.4.7.1 1-.9 1-2 1.2-3.3.6-2.3-1-4-2.8-4.8-5.1-.3-.9 0-1.6.5-2.1z" fill="currentColor"/></svg></button>
+      <button type="button" class="ci soc" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/></svg></button>
+      <button type="button" class="ci soc" aria-label="X / Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h3.5l10.5 15h-3.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18.6 4.5l-5.9 6.7M5.4 19.5l5.9-6.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+      <button type="button" class="ci soc" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z" fill="currentColor"/></svg></button>
+    </div>
+  </section>
   <div class="more"></div>
   <div class="navwrap">
       <nav class="nav" id="nav" aria-label="Main">
@@ -326,13 +392,13 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 
 
   /* services: pen-stroke logo (timeline from the supplied animation) + scroll to section */
-  var svcPlay=(function(){
+  function makePen(P){
     var D=["M215.328 271.658 C277.935 271.658 328.688 322.411 328.688 385.018 L328.691 525.145 L258.637 525.145 L258.637 489.779 C216.274 507.292 167.533 497.568 135.134 465.139 C102.734 432.710 93.055 383.960 110.607 341.613 C128.159 299.266 169.488 271.658 215.328 271.658 Z", "M355.449 271.656 L425.508 271.656 L425.508 307.020 C471.646 287.948 524.830 301.305 556.481 339.915 C588.131 378.524 590.797 433.295 563.046 474.796 C535.294 516.296 483.659 534.756 435.887 520.255 C388.115 505.754 355.453 461.707 355.453 411.782 L355.449 411.781 Z"],DUR=[3.6,3.6],GAP=.7,START=.9;
     var NS='http://www.w3.org/2000/svg',$=function(i){return document.getElementById(i)};
     function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
     function cl(x,a,b){return x<a?a:x>b?b:x}
     function ease(x){return .5-.5*Math.cos(Math.PI*x)}
-    var sc=$('svcScratch'),gS=$('svcStrokes'),gU=$('svcUi'),pen=$('svcPen'),SH=[],tcur=START;
+    var sc=$(P+'Scratch'),gS=$(P+'Strokes'),gU=$(P+'Ui'),pen=$(P+'Pen'),SH=[],tcur=START;
     function segLen(dd){sc.setAttribute('d',dd);return sc.getTotalLength()}
     function parse(d){
       var tk=d.match(/[MLCZ]|-?\d*\.?\d+/g),i=0,subs=[],cur=null,x=0,y=0,sx=0,sy=0;
@@ -392,17 +458,21 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
       var t0=performance.now();
       (function loop(now){var t=(now-t0)/1000;render(Math.min(t,TOTAL));if(t<TOTAL)raf=requestAnimationFrame(loop)})(t0);
     };
-  })();
-  var svcEl=document.getElementById('services'),moreEl=document.querySelector('.more');
+  }
+  var svcPlay=makePen('svc'),pfPlay=makePen('pf'),ctPlay=makePen('ct');
+  var svcEl=document.getElementById('services'),pfEl=document.getElementById('portfolio'),ctEl=document.getElementById('contact'),moreEl=document.querySelector('.more');
   function sizeMore(){
-    var navH=nav.offsetHeight,need=window.innerHeight-svcEl.offsetHeight-(stickTop+navH+18);
+    var navH=nav.offsetHeight,need=window.innerHeight-ctEl.offsetHeight-(stickTop+navH+18);
     moreEl.style.height=Math.max(60,need)+'px';
   }
-  function goServices(){
+  function goTo(sec,play){
     sizeMore();
-    var y=svcEl.getBoundingClientRect().top+(window.pageYOffset||0)-(stickTop+nav.offsetHeight+18);
-    slowScroll(Math.max(0,y),svcPlay);
+    var y=sec.getBoundingClientRect().top+(window.pageYOffset||0)-(stickTop+nav.offsetHeight+18);
+    slowScroll(Math.max(0,y),play);
   }
+  function goServices(){goTo(svcEl,svcPlay)}
+  function goPortfolio(){goTo(pfEl,pfPlay)}
+  function goContact(){goTo(ctEl,ctPlay)}
   var scrollRaf=0;
   function slowScroll(target,done){
     cancelAnimationFrame(scrollRaf);
@@ -431,6 +501,8 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
     var b=e.target.closest('button');if(!b)return;glass(b);setActive(b);
     if(b.dataset.go==='top')window.scrollTo({top:0,behavior:'smooth'});
     else if(b===btns[1])goServices();
+    else if(b===btns[2])goPortfolio();
+    else if(b===btns[3])goContact();
   });
 
   /* logo icon: refresh when on Home, otherwise go back to Home */
@@ -441,14 +513,14 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 
   /* language toggle EN <-> AR */
   var T={
-    en:{dir:'ltr',tag:'99% DESIGN . 1% NORMAL',nav:['HOME','SERVICES','PORTFOLIO','CONTACT'],role:'Graphic Designer',label:'Switch to Arabic',abT:'WELCOME TO 99 STUDIO',abS:'Where Vision Meets Creativity',abP1:'WE ARE A DIGITAL CREATIVE STUDIO SPECIALIZING IN VISUAL IDENTITY, LOGO DESIGN, GRAPHIC DESIGN, AND ADVERTISING. WE HELP BRANDS BUILD A DISTINCTIVE IDENTITY AND STRENGTHEN THEIR PRESENCE THROUGH CREATIVE DESIGNS WITH PURPOSE.',abP2:'WORKING ENTIRELY ONLINE, WE COLLABORATE WITH CLIENTS WORLDWIDE TO TRANSFORM IDEAS INTO IMPACTFUL VISUAL EXPERIENCES.'},
-    ar:{dir:'rtl',tag:'99% تصميم . 1% عادي',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في 99 STUDIO',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
+    en:{dir:'ltr',tag:'99% DESIGN . 1% NORMAL',nav:['HOME','SERVICES','PORTFOLIO','CONTACT'],role:'Graphic Designer',label:'Switch to Arabic',abT:'WELCOME TO 99 STUDIO',sel:'Selected work',pc0:'Brand Identity',pc1:'Logo Design',pc2:'Motion Graphics',pc3:'Social Media',pc4:'Packaging',pc5:'UI Design',abS:'Where Vision Meets Creativity',abP1:'WE ARE A DIGITAL CREATIVE STUDIO SPECIALIZING IN VISUAL IDENTITY, LOGO DESIGN, GRAPHIC DESIGN, AND ADVERTISING. WE HELP BRANDS BUILD A DISTINCTIVE IDENTITY AND STRENGTHEN THEIR PRESENCE THROUGH CREATIVE DESIGNS WITH PURPOSE.',abP2:'WORKING ENTIRELY ONLINE, WE COLLABORATE WITH CLIENTS WORLDWIDE TO TRANSFORM IDEAS INTO IMPACTFUL VISUAL EXPERIENCES.'},
+    ar:{dir:'rtl',tag:'99% تصميم . 1% عادي',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في 99 STUDIO',sel:'أعمال مختارة',pc0:'الهوية البصرية',pc1:'تصميم الشعارات',pc2:'موشن جرافيك',pc3:'السوشال ميديا',pc4:'تصميم العبوات',pc5:'تصميم الواجهات',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
   };
   var lang='en';
   function paint(l){
     var t=T[l];lang=l;
     root.lang=l;root.dir=t.dir;
-    document.getElementById('svcT').textContent=t.nav[1];tag.textContent=t.tag;role.textContent=t.role;['abT','abS','abP1','abP2'].forEach(function(k){document.getElementById(k).textContent=t[k]});
+    document.getElementById('svcT').textContent=t.nav[1];document.getElementById('pfT').textContent=t.nav[2];document.getElementById('ctT').textContent=t.nav[3];[].forEach.call(document.querySelectorAll('[data-t]'),function(e){e.textContent=t[e.dataset.t]});tag.textContent=t.tag;role.textContent=t.role;['abT','abS','abP1','abP2'].forEach(function(k){document.getElementById(k).textContent=t[k]});
     btns.forEach(function(b,i){b.textContent=t.nav[i]});
     langBtn.setAttribute('aria-label',t.label);
   }
