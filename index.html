@@ -179,7 +179,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 .svbox{--bx:var(--sw);width:var(--bx);container-type:inline-size;border-radius:calc(var(--bx)*.1);padding-bottom:3cqw;background:linear-gradient(90deg,#595959,#1a1a1a);border-color:rgba(255,255,255,.3);border-width:2px}
 .svbox .gbar{background:linear-gradient(90deg,#a6a6a6,#252525);margin:7cqw auto 0;width:46cqw;height:10.5cqw;border-radius:3.4cqw;display:flex;align-items:center;justify-content:center;font-size:5.2cqw}
 .pftop>svg{display:block;width:100%;height:auto;overflow:visible}
-.svbox{position:relative}.svbox>svg{position:absolute;display:block;width:30cqw;height:auto;overflow:visible;right:5cqw;top:43cqw;margin:0}
+.svbox{position:relative}.svbox>svg{position:absolute;display:block;width:30cqw;height:auto;overflow:visible;right:5cqw;top:50%;transform:translateY(-50%);margin:0}
 .gwide{height:calc(var(--sw)*.092);border-radius:calc(var(--sw)*.03);display:flex;align-items:center;padding:0 calc(var(--sw)*.0287);font-size:calc(var(--sw)*.05)}
 .pftop{display:flex;align-items:center;gap:calc(var(--sw)*.05)}
 .pftop .gwide{flex:1;min-width:0}
@@ -213,7 +213,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
   #services{--bx:min(calc(40*var(--vu)),660px);--sw:var(--bx);width:calc(var(--pw) - 2*clamp(56px,calc(7.5*var(--vu)),144px));margin-left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po))}
   #services .svbox{--bx:var(--sw)}
   .nav button{font-size:calc(32.9*var(--u))!important}
-  #walk #wkAb{--ww:min(calc(var(--sw)*.72),calc(62vh*540/570));width:var(--ww);margin:0 0 0 calc(var(--ww)*.0273)}
+  #walk #wkAb{--ww:calc(min(calc(62*var(--vu)),980px)/1.12);width:var(--ww);margin:0 0 0 calc(var(--ww)*.061)}
   .more{height:40px}
   .about{left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po));width:min(calc(40*var(--vu)),660px);top:calc(1250*var(--u));transform:translateY(-50%)}
   .about{--aw:min(calc(40*var(--vu)),660px)}
@@ -251,16 +251,17 @@ body.pvlock{overflow:hidden}
 
 .svlist{display:flex;flex-direction:column;gap:2.6cqw;padding:6cqw 4cqw 0 4cqw}
 .svi{display:flex;align-items:center;gap:3cqw;opacity:0;transform:translateY(-14cqw)}
-.svi-ic{flex:none;width:7.2cqw;height:7.2cqw;display:grid;place-items:center;color:var(--paper)}
+.svi-ic{flex:none;width:4.4cqw;height:4.4cqw;display:grid;place-items:center;color:var(--paper)}
 .svi-ic svg{width:100%;height:auto;display:block;transform:rotate(90deg)}
 @keyframes triwob{0%,100%{transform:rotate(-14deg) scale(.94)}50%{transform:rotate(14deg) scale(1.08)}}
-.svi-t{font-weight:700;text-transform:uppercase;font-size:5.2cqw;line-height:1.1;color:var(--paper);text-align:left}
+.svi-t{font-weight:700;text-transform:uppercase;font-size:4.2cqw;line-height:1.1;color:var(--paper);text-align:left}
 .svbox.go .svi{animation:svdrop .42s cubic-bezier(.2,.9,.25,1.12) both;animation-delay:calc(.12s + var(--i)*.07s)}
 .svbox.seen .svi{opacity:1;transform:none}
 @keyframes svdrop{0%{opacity:0;transform:translateY(-14cqw)}100%{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.svi{opacity:1;transform:none;animation:none!important}}
 html[lang=ar] .about{direction:rtl}
-html[lang=ar] .nav button{font-family:"Diodrum Arabic",system-ui,sans-serif;font-weight:500}
+html[lang=ar] .nav button{font-family:"Diodrum Arabic",system-ui,sans-serif;font-weight:700}
+html[lang=ar] .tag{direction:rtl;unicode-bidi:isolate}
 .ft{margin-top:calc(var(--sw)*.2)}
 .ft-line{height:1.5px;width:100%;background:var(--paper);margin:0 0 calc(var(--sw)*.035)}
 .ft-copy{display:flex;align-items:center;gap:calc(var(--sw)*.022);font-weight:300;font-size:calc(var(--sw)*.034);letter-spacing:.02em;line-height:1.3}
@@ -295,7 +296,7 @@ html[lang=ar] .nav button{font-family:"Diodrum Arabic",system-ui,sans-serif;font
 
 #walk{padding-top:0!important;margin-top:calc(var(--sw)*.04)}
 #contact{padding-top:calc(var(--sw)*.06)!important}
-#wkAb{--ab-white:var(--paper);--ab-eye:#181818;--ab-fg:#f2f2f2;width:min(calc(var(--sw)*.72),calc(62vh*540/570));aspect-ratio:540/570;margin:0 auto;display:block;transform:translateY(-7.5%)}
+#wkAb{--ab-white:var(--paper);--ab-eye:#181818;--ab-fg:#f2f2f2;width:calc(var(--sw)*.92);aspect-ratio:540/570;margin:0 auto;display:block;transform:translateY(-7.5%)}
 #wkAb svg{width:100%;height:100%;display:block;overflow:visible}
 
 .ctgrid{gap:calc(var(--sw)*.05) calc(var(--sw)*.04)!important;margin-top:calc(var(--sw)*.07)!important}
@@ -618,7 +619,7 @@ Design</b></div></div>
   /* language toggle EN <-> AR */
   var T={
     en:{dir:'ltr',tag:'99% DESIGN . 1% NORMAL',nav:['HOME','SERVICES','PORTFOLIO','CONTACT'],role:'Graphic Designer',label:'Switch to Arabic',abT:'WELCOME TO\n99 STUDIO',sel:'Selected work',c0:'WhatsApp',c1:'Instagram',c2:'X',c3:'Facebook',c4:'TikTok',d0:'Chat with us',d1:'Follow us',d2:'Follow us',d3:'Join us',d4:'Watch our work',cp:'2027 99 STUDIO',rt:'All rights reserved',pc0:'Brand\nIdentity',pc1:'Logo\nDesign',pc2:'Motion\nGraphics',pc3:'Social\nMedia',pc4:'Packaging',pc5:'UI\nDesign',abS:'Where Vision Meets Creativity',abP1:'WE ARE A DIGITAL CREATIVE STUDIO SPECIALIZING IN VISUAL IDENTITY, LOGO DESIGN, GRAPHIC DESIGN, AND ADVERTISING. WE HELP BRANDS BUILD A DISTINCTIVE IDENTITY AND STRENGTHEN THEIR PRESENCE THROUGH CREATIVE DESIGNS WITH PURPOSE.',abP2:'WORKING ENTIRELY ONLINE, WE COLLABORATE WITH CLIENTS WORLDWIDE TO TRANSFORM IDEAS INTO IMPACTFUL VISUAL EXPERIENCES.'},
-    ar:{dir:'rtl',tag:'\u206699% \u2067تصميم\u2069 . 1% \u2067عادي\u2069\u2069',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في\n\u206699 STUDIO\u2069',sel:'أعمال مختارة',c0:'واتساب',c1:'انستغرام',c2:'X',c3:'فيسبوك',c4:'تيك توك',d0:'راسلنا',d1:'تابعنا',d2:'تابعنا',d3:'انضم إلينا',d4:'شاهد أعمالنا',cp:'2027 99 STUDIO',rt:'جميع الحقوق محفوظة',pc0:'الهوية\nالبصرية',pc1:'تصميم\nالشعارات',pc2:'موشن\nجرافيك',pc3:'السوشال\nميديا',pc4:'تصميم\nالعبوات',pc5:'تصميم\nالواجهات',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
+    ar:{dir:'rtl',tag:'\u206799% تصميم . 1% عادي\u2069',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في\n\u206699 STUDIO\u2069',sel:'أعمال مختارة',c0:'واتساب',c1:'انستغرام',c2:'X',c3:'فيسبوك',c4:'تيك توك',d0:'راسلنا',d1:'تابعنا',d2:'تابعنا',d3:'انضم إلينا',d4:'شاهد أعمالنا',cp:'2027 99 STUDIO',rt:'جميع الحقوق محفوظة',pc0:'الهوية\nالبصرية',pc1:'تصميم\nالشعارات',pc2:'موشن\nجرافيك',pc3:'السوشال\nميديا',pc4:'تصميم\nالعبوات',pc5:'تصميم\nالواجهات',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
   };
   var lang='en';
   function paint(l){
