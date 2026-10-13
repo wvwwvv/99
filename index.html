@@ -11,12 +11,12 @@
 <meta property="og:title" content="99 STUDIO">
 <meta property="og:description" content="99% DESIGN . 1% NORMAL">
 <meta property="og:url" content="https://99studiops.com/">
-<meta property="og:image" content="https://99studiops.com/og-image.png">
+<meta property="og:image" content="https://99studiops.com/og-99studio.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="99 STUDIO">
-<meta name="twitter:image" content="https://99studiops.com/og-image.png">
+<meta name="twitter:image" content="https://99studiops.com/og-99studio.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
 <link rel="shortcut icon" href="favicon.ico">
@@ -77,7 +77,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 /* ---------- page (designed on a 1080-wide artboard; 1u = 1/1080 of the column) ---------- */
 .page{position:relative;width:var(--w);margin:0 auto}
 .stage{position:relative;height:calc(1920*var(--u));overflow:visible}
-.more{height:max(22svh,140px)}
+.more{height:28px}
 
 .cap{position:absolute;z-index:5;left:0;top:0;width:100%;height:calc(441*var(--u));background:var(--paper);
   border-radius:0 0 calc(150*var(--u)) calc(150*var(--u));will-change:opacity}
@@ -162,7 +162,7 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 @keyframes sheen{0%{transform:translateX(40px)}42%,100%{transform:translateX(680px)}}
 
 /* ---------- services / portfolio / contact ---------- */
-.svc{--sw:calc(872*var(--u));position:relative;z-index:2;width:var(--sw);margin:0 auto;padding-top:var(--gap);--gap:calc(280*var(--u))}
+.svc{--sw:calc(872*var(--u));position:relative;z-index:2;width:var(--sw);margin:0 auto;padding-top:var(--gap);--gap:calc(215*var(--u))}
 .gl{position:relative;overflow:hidden;isolation:isolate;border:1.5px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 1px rgba(255,255,255,.35),0 8px 24px rgba(0,0,0,.35);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .gl::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(242,242,242,.2),rgba(242,242,242,0) 55%)}
 .gl::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:26%;z-index:2;pointer-events:none;transform:translateX(-160%) skewX(-14deg);
@@ -175,10 +175,11 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
 @media (hover:hover){.gbar:hover{transform:scale(1.05)}}
 .gbar:active{transform:scale(1.03)}
 .gbar>*{position:relative;z-index:3}
-.svrow{display:grid;grid-template-columns:50.4% 1fr;column-gap:7%;align-items:center}
-.svbox{--bx:calc(var(--sw)*.504);container-type:inline-size;aspect-ratio:1/1.51;border-radius:calc(var(--bx)*.13);background:linear-gradient(90deg,#595959,#1a1a1a);border-color:rgba(255,255,255,.3);border-width:2px}
-.svbox .gbar{background:linear-gradient(90deg,#a6a6a6,#252525);margin:11.5cqw 14.7cqw 0;height:17.8cqw;border-radius:5.6cqw;display:flex;align-items:center;justify-content:center;font-size:8.6cqw}
-.svrow>svg,.pftop>svg{display:block;width:100%;height:auto;overflow:visible}
+.svrow{display:block}
+.svbox{--bx:var(--sw);width:var(--bx);container-type:inline-size;border-radius:calc(var(--bx)*.1);padding-bottom:3cqw;background:linear-gradient(90deg,#595959,#1a1a1a);border-color:rgba(255,255,255,.3);border-width:2px}
+.svbox .gbar{background:linear-gradient(90deg,#a6a6a6,#252525);margin:7cqw auto 0;width:46cqw;height:10.5cqw;border-radius:3.4cqw;display:flex;align-items:center;justify-content:center;font-size:5.2cqw}
+.pftop>svg{display:block;width:100%;height:auto;overflow:visible}
+.svbox{position:relative}.svbox>svg{position:absolute;display:block;width:30cqw;height:auto;overflow:visible;right:5cqw;top:43cqw;margin:0}
 .gwide{height:calc(var(--sw)*.092);border-radius:calc(var(--sw)*.03);display:flex;align-items:center;padding:0 calc(var(--sw)*.0287);font-size:calc(var(--sw)*.05)}
 .pftop{display:flex;align-items:center;gap:calc(var(--sw)*.05)}
 .pftop .gwide{flex:1;min-width:0}
@@ -205,15 +206,15 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
   .capin{width:100%}
   .capin svg{left:calc(clamp(56px,calc(7.5*var(--vu)),144px) + var(--po));top:50%;width:clamp(300px,calc(23*var(--vu)),440px);height:auto;aspect-ratio:887/253.5;transform:translateY(-50%)}
   .stage{height:calc(1690*var(--u))}
-  .svc{--sw:min(calc(50*var(--vu)),760px);width:var(--sw);margin-left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po));margin-right:0;--gap:clamp(120px,calc(13*var(--vu)),240px)}
+  .svc{--sw:min(calc(50*var(--vu)),760px);width:var(--sw);margin-left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po));margin-right:0;--gap:clamp(90px,calc(9.5*var(--vu)),180px)}
   .pf,.ct{--sw:min(calc(62*var(--vu)),980px)}
   #portfolio{width:calc(var(--sw) + 113px)}
   #portfolio .pgrid{width:var(--sw)}
-  #services{--bx:min(calc(33*var(--vu)),620px);--sw:calc(var(--bx) / .504);width:calc(var(--pw) - 2*clamp(56px,calc(7.5*var(--vu)),144px));margin-left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po))}
-  #services .svrow{grid-template-columns:var(--bx) 1fr;column-gap:0}
-  #services .svrow>svg{justify-self:end;width:min(calc(25*var(--vu)),440px);margin-right:clamp(48px,calc(7*var(--vu)),140px)}
+  #services{--bx:min(calc(40*var(--vu)),660px);--sw:var(--bx);width:calc(var(--pw) - 2*clamp(56px,calc(7.5*var(--vu)),144px));margin-left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po))}
+  #services .svbox{--bx:var(--sw)}
   .nav button{font-size:calc(32.9*var(--u))!important}
-  .more{height:max(60svh,420px)}
+  #walk #wkAb{--ww:min(calc(var(--sw)*.72),calc(62vh*540/570));width:var(--ww);margin:0 0 0 calc(var(--ww)*.0273)}
+  .more{height:40px}
   .about{left:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po));width:min(calc(40*var(--vu)),660px);top:calc(1250*var(--u));transform:translateY(-50%)}
   .about{--aw:min(calc(40*var(--vu)),660px)}
   .group{transform-origin:calc(988*var(--u)) calc(695*var(--u));transform:translate(calc(var(--pw) - clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po) - 988*var(--u)),calc(126.5*var(--u))) scale(.76)}
@@ -248,21 +249,23 @@ html[dir=rtl] .pv-back svg{transform:scaleX(-1)}
 #pvl img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px}
 body.pvlock{overflow:hidden}
 
-.svlist{display:flex;flex-direction:column;gap:3.4cqw;padding:7cqw 12cqw 0 12cqw}
-.svi{display:flex;align-items:center;gap:5cqw;opacity:0;transform:translateY(-14cqw)}
-.svi-ic{flex:none;width:12.5cqw;height:12.5cqw;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);background:linear-gradient(135deg,#505050,#181818);box-shadow:inset 0 1px 1px rgba(255,255,255,.35),0 4px 10px rgba(0,0,0,.35);display:grid;place-items:center;color:var(--paper)}
-.svi-ic svg{width:62%;height:auto;display:block}
-.svi-t{font-weight:700;text-transform:uppercase;font-size:6.6cqw;line-height:1.1;color:var(--paper);text-align:left}
-.svbox.go .svi{animation:svdrop .8s cubic-bezier(.2,.9,.25,1.15) both;animation-delay:calc(.55s + var(--i)*.14s)}
+.svlist{display:flex;flex-direction:column;gap:2.6cqw;padding:6cqw 4cqw 0 4cqw}
+.svi{display:flex;align-items:center;gap:3cqw;opacity:0;transform:translateY(-14cqw)}
+.svi-ic{flex:none;width:7.2cqw;height:7.2cqw;display:grid;place-items:center;color:var(--paper)}
+.svi-ic svg{width:100%;height:auto;display:block;transform:rotate(90deg)}
+@keyframes triwob{0%,100%{transform:rotate(-14deg) scale(.94)}50%{transform:rotate(14deg) scale(1.08)}}
+.svi-t{font-weight:700;text-transform:uppercase;font-size:5.2cqw;line-height:1.1;color:var(--paper);text-align:left}
+.svbox.go .svi{animation:svdrop .42s cubic-bezier(.2,.9,.25,1.12) both;animation-delay:calc(.12s + var(--i)*.07s)}
 .svbox.seen .svi{opacity:1;transform:none}
 @keyframes svdrop{0%{opacity:0;transform:translateY(-14cqw)}100%{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.svi{opacity:1;transform:none;animation:none!important}}
 html[lang=ar] .about{direction:rtl}
+html[lang=ar] .nav button{font-family:"Diodrum Arabic",system-ui,sans-serif;font-weight:500}
 .ft{margin-top:calc(var(--sw)*.2)}
 .ft-line{height:1.5px;width:100%;background:var(--paper);margin:0 0 calc(var(--sw)*.035)}
 .ft-copy{display:flex;align-items:center;gap:calc(var(--sw)*.022);font-weight:300;font-size:calc(var(--sw)*.034);letter-spacing:.02em;line-height:1.3}
 .ft-copy i{flex:none;font-style:normal;display:grid;place-items:center;width:1.55em;height:1.55em;border:1.5px solid var(--paper);border-radius:50%;font-size:.82em;line-height:1}
-.ft-copy small{display:block;font-size:.8em;opacity:.7;letter-spacing:.06em;text-transform:uppercase}
+.ft-copy small{display:block;font-size:1em;opacity:.85;letter-spacing:.02em;text-transform:uppercase}
 .capin svg.hl{cursor:pointer}
 #services{padding-top:calc(var(--gap) - 55*var(--u))}
 #portfolio{padding-top:calc(var(--gap) - 45*var(--u))}
@@ -278,6 +281,30 @@ html[lang=ar] .about{direction:rtl}
 .ctgrid.go .ctile{animation:ctrise .75s cubic-bezier(.2,.9,.25,1.1) both;animation-delay:calc(.15s + var(--i)*.1s)}
 @keyframes ctrise{0%{opacity:0;transform:translateY(22px) scale(.94)}100%{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.ctile{opacity:1;transform:none;animation:none!important}}
+
+.ctgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.ctile{aspect-ratio:2.35/1!important}
+.ctin{flex-direction:row!important;justify-content:flex-start!important;gap:6%;padding:0 7%;text-align:left}
+.ctile-ic{margin:0!important;flex:none;width:26cqw!important;height:26cqw!important}
+.ctile-tx{display:flex;flex-direction:column;gap:2.4cqw;min-width:0}
+.ctile-t{font-size:10.4cqw!important;line-height:1.05}
+.ctile-d{font-weight:300;font-size:7.8cqw;line-height:1.15;opacity:.85;white-space:nowrap}
+.ft{margin-top:calc(var(--sw)*.1)!important}
+.ft-line{margin-bottom:calc(var(--sw)*.022)!important}
+.ft-copy{font-size:calc(var(--sw)*.026)!important;gap:calc(var(--sw)*.016)!important}
+
+#walk{padding-top:0!important;margin-top:calc(var(--sw)*.04)}
+#contact{padding-top:calc(var(--sw)*.06)!important}
+#wkAb{--ab-white:var(--paper);--ab-eye:#181818;--ab-fg:#f2f2f2;width:min(calc(var(--sw)*.72),calc(62vh*540/570));aspect-ratio:540/570;margin:0 auto;display:block;transform:translateY(-7.5%)}
+#wkAb svg{width:100%;height:100%;display:block;overflow:visible}
+
+.ctgrid{gap:calc(var(--sw)*.05) calc(var(--sw)*.04)!important;margin-top:calc(var(--sw)*.07)!important}
+.ctile{aspect-ratio:auto!important;border:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}
+.ctile-d{display:none!important}
+.ctin{padding:0!important;gap:4%!important}
+.ctile-ic{width:calc(var(--sw)*.1)!important;height:calc(var(--sw)*.1)!important}
+.ctile-t{font-size:calc(var(--sw)*.038)!important}
+.ft-line{width:100%!important;margin-left:0!important}
 </style>
 </head>
 <body>
@@ -348,13 +375,15 @@ html[lang=ar] .about{direction:rtl}
   </div>
   <section class="svc" id="services">
     <div class="svrow">
-      <div class="gl svbox" id="svBox"><div class="gl gbar"><span id="svcT">SERVICES</span></div><div class="svlist"><div class="svi" style="--i:0"><span class="svi-ic"><svg viewBox="98 267 488 263" fill="currentColor" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg></span><span class="svi-t" data-t="pc0">Brand Identity</span></div><div class="svi" style="--i:1"><span class="svi-ic"><svg viewBox="98 267 488 263" fill="currentColor" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg></span><span class="svi-t" data-t="pc1">Logo Design</span></div><div class="svi" style="--i:2"><span class="svi-ic"><svg viewBox="98 267 488 263" fill="currentColor" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg></span><span class="svi-t" data-t="pc2">Motion Graphics</span></div><div class="svi" style="--i:3"><span class="svi-ic"><svg viewBox="98 267 488 263" fill="currentColor" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg></span><span class="svi-t" data-t="pc3">Social Media</span></div><div class="svi" style="--i:4"><span class="svi-ic"><svg viewBox="98 267 488 263" fill="currentColor" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg></span><span class="svi-t" data-t="pc4">Packaging</span></div><div class="svi" style="--i:5"><span class="svi-ic"><svg viewBox="98 267 488 263" fill="currentColor" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg></span><span class="svi-t" data-t="pc5">UI Design</span></div></div></div>
+      <div class="gl svbox" id="svBox"><div class="gl gbar"><span id="svcT">SERVICES</span></div><div class="svlist"><div class="svi" style="--i:0"><span class="svi-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4L21.4 20H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg></span><span class="svi-t" data-t="pc0">Brand Identity</span></div><div class="svi" style="--i:1"><span class="svi-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4L21.4 20H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg></span><span class="svi-t" data-t="pc1">Logo Design</span></div><div class="svi" style="--i:2"><span class="svi-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4L21.4 20H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg></span><span class="svi-t" data-t="pc2">Motion Graphics</span></div><div class="svi" style="--i:3"><span class="svi-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4L21.4 20H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg></span><span class="svi-t" data-t="pc3">Social Media</span></div><div class="svi" style="--i:4"><span class="svi-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4L21.4 20H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg></span><span class="svi-t" data-t="pc4">Packaging</span></div><div class="svi" style="--i:5"><span class="svi-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4L21.4 20H2.6z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg></span><span class="svi-t" data-t="pc5">UI Design</span></div></div>
       <svg id="svcLogo" viewBox="92 254 506 288" role="img" aria-label="ab">
         <defs><path id="svcScratch" d=""/></defs>
         <g id="svcStrokes" fill="none" stroke="#f2f2f2" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></g>
         <g id="svcUi"></g>
         <g id="svcPen" opacity="0"><g transform="scale(2.4)"><path d="M0 0 L7 -4 L24 -26 L31 -19 L12 -3 Z" fill="#181818" stroke="#f2f2f2" stroke-width="1.8" stroke-linejoin="round"/><circle cx="27.5" cy="-22.5" r="3" fill="#f2f2f2"/></g></g>
       </svg>
+      </div>
+
     </div>
   </section>
   <section class="svc pf" id="portfolio">
@@ -380,9 +409,10 @@ Media</b></div></div>
 Design</b></div></div>
     </div>
   </section>
+  <section class="svc wk" id="walk"><div id="wkAb"><svg id="wkS" viewBox="0 230 540 570" role="img" aria-label="ab icons walking"><g id="wkGround"></g><g id="wkChars"></g><g id="wkBursts"></g><g id="wkIcons"></g></svg></div></section>
   <section class="svc ct" id="contact">
     <div class="gl gbar gwide ctbar"><span id="ctT">CONTACT</span></div>
-    <div class="ctgrid" id="ctGrid"><button type="button" class="ctile" style="--i:0" aria-label="WhatsApp"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.2c.3-.4.8-.4 1 0l.8 1.5c.1.3 0 .6-.2.8l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.6c.2-.2.5-.3.8-.2l1.5.8c.4.2.4.7.1 1-.9 1-2 1.2-3.3.6-2.3-1-4-2.8-4.8-5.1-.3-.9 0-1.6.5-2.1z" fill="currentColor"/></svg></span><span class="ctile-t" data-t="c0">WhatsApp</span></span></button><button type="button" class="ctile" style="--i:1" aria-label="Instagram"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/></svg></span><span class="ctile-t" data-t="c1">Instagram</span></span></button><button type="button" class="ctile" style="--i:2" aria-label="X"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h3.5l10.5 15h-3.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18.6 4.5l-5.9 6.7M5.4 19.5l5.9-6.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="ctile-t" data-t="c2">X</span></span></button><button type="button" class="ctile" style="--i:3" aria-label="Facebook"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z" fill="currentColor"/></svg></span><span class="ctile-t" data-t="c3">Facebook</span></span></button><button type="button" class="ctile" style="--i:4" aria-label="Email"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="5.6" width="17.2" height="12.8" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4.6 7.8l7.4 5.8 7.4-5.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ctile-t" data-t="c4">Email</span></span></button><button type="button" class="ctile" style="--i:5" aria-label="TikTok"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3.6v10.2a3.4 3.4 0 1 1-3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M14.2 3.6c.3 2.4 1.9 4.1 4.4 4.3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span class="ctile-t" data-t="c5">TikTok</span></span></button></div>
+    <div class="ctgrid" id="ctGrid"><button type="button" class="ctile" style="--i:0" aria-label="WhatsApp"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.2c.3-.4.8-.4 1 0l.8 1.5c.1.3 0 .6-.2.8l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.6c.2-.2.5-.3.8-.2l1.5.8c.4.2.4.7.1 1-.9 1-2 1.2-3.3.6-2.3-1-4-2.8-4.8-5.1-.3-.9 0-1.6.5-2.1z" fill="currentColor"/></svg></span><span class="ctile-tx"><span class="ctile-t" data-t="c0">WhatsApp</span><span class="ctile-d" data-t="d0">Chat with us</span></span></span></button><button type="button" class="ctile" style="--i:1" aria-label="Instagram"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/></svg></span><span class="ctile-tx"><span class="ctile-t" data-t="c1">Instagram</span><span class="ctile-d" data-t="d1">Follow us</span></span></span></button><button type="button" class="ctile" style="--i:2" aria-label="X"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h3.5l10.5 15h-3.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18.6 4.5l-5.9 6.7M5.4 19.5l5.9-6.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="ctile-tx"><span class="ctile-t" data-t="c2">X</span><span class="ctile-d" data-t="d2">Follow us</span></span></span></button><button type="button" class="ctile" style="--i:3" aria-label="Facebook"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z" fill="currentColor"/></svg></span><span class="ctile-tx"><span class="ctile-t" data-t="c3">Facebook</span><span class="ctile-d" data-t="d3">Join us</span></span></span></button><button type="button" class="ctile" style="--i:4" aria-label="TikTok"><span class="ctin"><span class="ctile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3.6v10.2a3.4 3.4 0 1 1-3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M14.2 3.6c.3 2.4 1.9 4.1 4.4 4.3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span class="ctile-tx"><span class="ctile-t" data-t="c4">TikTok</span><span class="ctile-d" data-t="d4">Watch our work</span></span></span></button></div>
     <div class="ft"><div class="ft-line"></div><div class="ft-copy"><i>C</i><span><span data-t="cp">2027 99 STUDIO</span><small data-t="rt">All rights reserved</small></span></div></div>
   </section>
   <div class="more"></div>
@@ -451,7 +481,7 @@ Design</b></div></div>
 
   /* services: pen-stroke logo (timeline from the supplied animation) + scroll to section */
   function makePen(P){
-    var D=["M215.328 271.658 C277.935 271.658 328.688 322.411 328.688 385.018 L328.691 525.145 L258.637 525.145 L258.637 489.779 C216.274 507.292 167.533 497.568 135.134 465.139 C102.734 432.710 93.055 383.960 110.607 341.613 C128.159 299.266 169.488 271.658 215.328 271.658 Z", "M355.449 271.656 L425.508 271.656 L425.508 307.020 C471.646 287.948 524.830 301.305 556.481 339.915 C588.131 378.524 590.797 433.295 563.046 474.796 C535.294 516.296 483.659 534.756 435.887 520.255 C388.115 505.754 355.453 461.707 355.453 411.782 L355.449 411.781 Z"],DUR=[5,5],GAP=.9,START=1.3;
+    var D=["M215.328 271.658 C277.935 271.658 328.688 322.411 328.688 385.018 L328.691 525.145 L258.637 525.145 L258.637 489.779 C216.274 507.292 167.533 497.568 135.134 465.139 C102.734 432.710 93.055 383.960 110.607 341.613 C128.159 299.266 169.488 271.658 215.328 271.658 Z", "M355.449 271.656 L425.508 271.656 L425.508 307.020 C471.646 287.948 524.830 301.305 556.481 339.915 C588.131 378.524 590.797 433.295 563.046 474.796 C535.294 516.296 483.659 534.756 435.887 520.255 C388.115 505.754 355.453 461.707 355.453 411.782 L355.449 411.781 Z"],DUR=[3.8,3.8],GAP=.6,START=.9;
     var NS='http://www.w3.org/2000/svg',$=function(i){return document.getElementById(i)};
     function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
     function cl(x,a,b){return x<a?a:x>b?b:x}
@@ -523,7 +553,7 @@ Design</b></div></div>
   var svcEl=document.getElementById('services'),pfEl=document.getElementById('portfolio'),ctEl=document.getElementById('contact'),moreEl=document.querySelector('.more');
   function sizeMore(){
     var navH=nav.offsetHeight,need=window.innerHeight-ctEl.offsetHeight-(stickTop+navH+18);
-    moreEl.style.height=Math.max(60,need)+'px';
+    moreEl.style.height='';
   }
   function goTo(sec,play){
     sizeMore();
@@ -578,7 +608,6 @@ Design</b></div></div>
     else if(b===btns[3])goContact();
   });
 
-  (function(){var ln=document.querySelector('.ft-line');function fit(){if(!ln)return;ln.style.marginLeft='0';ln.style.width='100%';var r=ln.getBoundingClientRect();ln.style.marginLeft=(-r.left)+'px';ln.style.width=document.documentElement.clientWidth+'px'}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,600);setTimeout(fit,2500)})();
   hl.style.cursor='pointer';hl.addEventListener('click',function(){window.scrollTo(0,0);location.reload()});
   /* logo icon: refresh when on Home, otherwise go back to Home */
   homeBtn.addEventListener('click',function(){
@@ -588,8 +617,8 @@ Design</b></div></div>
 
   /* language toggle EN <-> AR */
   var T={
-    en:{dir:'ltr',tag:'99% DESIGN . 1% NORMAL',nav:['HOME','SERVICES','PORTFOLIO','CONTACT'],role:'Graphic Designer',label:'Switch to Arabic',abT:'WELCOME TO\n99 STUDIO',sel:'Selected work',c0:'WhatsApp',c1:'Instagram',c2:'X',c3:'Facebook',c4:'Email',c5:'TikTok',cp:'2027 99 STUDIO',rt:'All rights reserved',pc0:'Brand\nIdentity',pc1:'Logo\nDesign',pc2:'Motion\nGraphics',pc3:'Social\nMedia',pc4:'Packaging',pc5:'UI\nDesign',abS:'Where Vision Meets Creativity',abP1:'WE ARE A DIGITAL CREATIVE STUDIO SPECIALIZING IN VISUAL IDENTITY, LOGO DESIGN, GRAPHIC DESIGN, AND ADVERTISING. WE HELP BRANDS BUILD A DISTINCTIVE IDENTITY AND STRENGTHEN THEIR PRESENCE THROUGH CREATIVE DESIGNS WITH PURPOSE.',abP2:'WORKING ENTIRELY ONLINE, WE COLLABORATE WITH CLIENTS WORLDWIDE TO TRANSFORM IDEAS INTO IMPACTFUL VISUAL EXPERIENCES.'},
-    ar:{dir:'rtl',tag:'99% تصميم . 1% عادي',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في\n\u206699 STUDIO\u2069',sel:'أعمال مختارة',c0:'واتساب',c1:'انستغرام',c2:'X',c3:'فيسبوك',c4:'البريد',c5:'تيك توك',cp:'2027 99 STUDIO',rt:'جميع الحقوق محفوظة',pc0:'الهوية\nالبصرية',pc1:'تصميم\nالشعارات',pc2:'موشن\nجرافيك',pc3:'السوشال\nميديا',pc4:'تصميم\nالعبوات',pc5:'تصميم\nالواجهات',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
+    en:{dir:'ltr',tag:'99% DESIGN . 1% NORMAL',nav:['HOME','SERVICES','PORTFOLIO','CONTACT'],role:'Graphic Designer',label:'Switch to Arabic',abT:'WELCOME TO\n99 STUDIO',sel:'Selected work',c0:'WhatsApp',c1:'Instagram',c2:'X',c3:'Facebook',c4:'TikTok',d0:'Chat with us',d1:'Follow us',d2:'Follow us',d3:'Join us',d4:'Watch our work',cp:'2027 99 STUDIO',rt:'All rights reserved',pc0:'Brand\nIdentity',pc1:'Logo\nDesign',pc2:'Motion\nGraphics',pc3:'Social\nMedia',pc4:'Packaging',pc5:'UI\nDesign',abS:'Where Vision Meets Creativity',abP1:'WE ARE A DIGITAL CREATIVE STUDIO SPECIALIZING IN VISUAL IDENTITY, LOGO DESIGN, GRAPHIC DESIGN, AND ADVERTISING. WE HELP BRANDS BUILD A DISTINCTIVE IDENTITY AND STRENGTHEN THEIR PRESENCE THROUGH CREATIVE DESIGNS WITH PURPOSE.',abP2:'WORKING ENTIRELY ONLINE, WE COLLABORATE WITH CLIENTS WORLDWIDE TO TRANSFORM IDEAS INTO IMPACTFUL VISUAL EXPERIENCES.'},
+    ar:{dir:'rtl',tag:'\u206699% \u2067تصميم\u2069 . 1% \u2067عادي\u2069\u2069',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في\n\u206699 STUDIO\u2069',sel:'أعمال مختارة',c0:'واتساب',c1:'انستغرام',c2:'X',c3:'فيسبوك',c4:'تيك توك',d0:'راسلنا',d1:'تابعنا',d2:'تابعنا',d3:'انضم إلينا',d4:'شاهد أعمالنا',cp:'2027 99 STUDIO',rt:'جميع الحقوق محفوظة',pc0:'الهوية\nالبصرية',pc1:'تصميم\nالشعارات',pc2:'موشن\nجرافيك',pc3:'السوشال\nميديا',pc4:'تصميم\nالعبوات',pc5:'تصميم\nالواجهات',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
   };
   var lang='en';
   function paint(l){
@@ -674,6 +703,124 @@ Design</b></div></div>
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lv>0){if(lb.classList.contains('on'))lb.classList.remove('on');else back.click()}});
 })();
+</script>
+<script>
+
+(function(){
+  var P={"stA": "M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531", "aC": "M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969", "stB": "M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625", "bC": "M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906"};
+  var NS='http://www.w3.org/2000/svg', $=function(i){return document.getElementById(i);};
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+  function cl(x,a,b){return x<a?a:x>b?b:x;}
+  function sm(a,b,x){x=cl((x-a)/(b-a),0,1);return x*x*(3-2*x);}
+  function eio(x){x=cl(x,0,1);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+  function back(x){x=cl(x,0,1);var c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);}
+  function kf(p,k){for(var i=0;i<k.length-1;i++){if(p<=k[i+1][0]){var u=(p-k[i][0])/(k[i+1][0]-k[i][0]);u=u*u*(3-2*u);return k[i][1]+(k[i+1][1]-k[i][1])*u;}}return k[k.length-1][1];}
+  var LOOP=12.6, GY=770, ICX=342.5, ICY=525.14, W=540;
+  var SPD=44*48/LOOP;                                                   // ground speed (loops seamlessly)
+  // ---------- ground ----------
+  var gr=$('wkGround');
+  var line=el('line',{x1:-30,y1:GY+2,x2:570,y2:GY+2,stroke:'var(--ab-fg)','stroke-width':4,'stroke-linecap':'round','stroke-dasharray':'26 18'},gr);
+  // ---------- three ab characters walking in a line (small, medium, big) ----------
+  var EYE=[{x:179.3,y:377,b:0},{x:251.3,y:377,b:0},{x:432.8,y:403.8,b:1},{x:504.8,y:403.8,b:1}];
+  var CH=[{k:.27,cx:75,off:.66,enter:.7,exit:.7},{k:.33,cx:238.5,off:.33,enter:.35,exit:.35},{k:.40,cx:433.5,off:0,enter:0,exit:0}];
+  CH.forEach(function(c,ci){
+    c.hw=479*c.k/2;c.g=el('g',{},$('wkChars'));
+    c.gA=el('g',{},c.g);c.stA=el('path',{d:P.stA,fill:'var(--ab-white)'},c.gA);el('path',{d:P.aC,fill:'var(--ab-white)'},c.gA);
+    c.gB=el('g',{},c.g);c.stB=el('path',{d:P.stB,fill:'var(--ab-white)'},c.gB);el('path',{d:P.bC,fill:'var(--ab-white)'},c.gB);
+    c.eyes=EYE.map(function(e){
+      var o={x:e.x,y:e.y,root:el('g',{},e.b?c.gB:c.gA)};
+      el('ellipse',{cx:e.x,cy:e.y,rx:25,ry:31,fill:'var(--ab-eye)'},o.root);
+      o.pu=el('g',{},o.root);el('circle',{cx:e.x,cy:e.y,r:12.5,fill:'var(--ab-white)'},o.pu);el('circle',{cx:e.x+4.5,cy:e.y-5,r:3.6,fill:'var(--ab-eye)'},o.pu);return o;});
+  });
+  function xoff(c,tl){return 0;}                                       // no entrance / exit: they simply keep walking
+  function stg(c,x,y,xo){return [c.cx+xo+(x-ICX)*c.k,GY+(y-ICY)*c.k];}
+  // ---------- graphic-design icons ----------
+  var GL=[
+   /* Ps */ '<path d="M-24 16 V-16 H-13 C-3 -16 -3 1 -13 1 H-24"/><path d="M22 -3 C16 -8 5 -6 7 1 C9 6 22 5 22 11 C22 18 9 18 3 13"/>',
+   /* Pr */ '<path d="M-24 16 V-16 H-13 C-3 -16 -3 1 -13 1 H-24"/><path d="M6 -6 V16"/><path d="M6 5 C6 -3 13 -7 22 -5"/>',
+   /* Ae */ '<path d="M-27 16 L-14 -16 L-1 16"/><path d="M-22 5 H-6"/><path d="M8 6 H25 C25 -1 20 -6 16 -6 C10 -6 6 -1 6 6 C6 13 10 17 16 17 C20 17 23 15 25 12"/>',
+   /* Ai */ '<path d="M-27 16 L-14 -16 L-1 16"/><path d="M-22 5 H-6"/><path d="M14 -6 V16"/><path d="M14 -16 V-15.5"/>',
+   /* AI (sparkles) */ '<path d="M-4 -27 C-3 -9 2 -3 20 -2 C2 0 -3 7 -4 25 C-5 7 -10 0 -28 -2 C-10 -3 -5 -9 -4 -27 Z"/><path d="M21 -29 C21.5 -23 23 -21 29 -19 C23 -18 21.5 -16 21 -10 C20.5 -16 19 -18 13 -19 C19 -21 20.5 -23 21 -29 Z"/><path d="M19 9 C19.4 13 20.5 14.4 25 15.5 C20.5 16.6 19.4 18 19 22 C18.6 18 17.5 16.6 13 15.5 C17.5 14.4 18.6 13 19 9 Z"/>',
+   /* Id */ '<path d="M-22 -16 V16"/><path d="M16 -16 V16"/><path d="M16 5 C16 -2 11 -6 5 -6 C-2 -6 -6 -1 -6 5 C-6 11 -2 16 5 16 C11 16 16 12 16 5"/>'];
+  // two icons per character; they hover above it and travel with it
+  var LIFE=11.0;
+  // all six software icons are the same size and pop out in rapid succession (every 0.45s)
+  var DEF=[ {ch:2,gl:0,ts:0.00,rel:[-28,-120],sc:.72}, {ch:2,gl:1,ts:1.35,rel:[34,-262],sc:.72},
+            {ch:1,gl:2,ts:0.45,rel:[-26,-112],sc:.72}, {ch:1,gl:3,ts:1.80,rel:[30,-250],sc:.72},
+            {ch:0,gl:4,ts:0.90,rel:[-22,-104],sc:.72}, {ch:0,gl:5,ts:2.25,rel:[26,-240],sc:.72} ];
+  var FLIP={ch:1,fs:4.0,fd:1.0};                                          // the middle logo does a somersault once per loop
+  var IC=[],ig=$('wkIcons'),bg=$('wkBursts');
+  DEF.forEach(function(d,i){
+    var g=el('g',{},ig);
+    el('rect',{x:-46,y:-46,width:92,height:92,rx:26,fill:'none',stroke:'var(--ab-white)','stroke-width':4.5},g);
+    var gl=el('g',{fill:'none',stroke:'var(--ab-white)','stroke-width':4.5,'stroke-linecap':'round','stroke-linejoin':'round'},g);gl.innerHTML=GL[d.gl];
+    var parts=[].slice.call(gl.children);parts.forEach(function(p){p.setAttribute('pathLength','1');p.style.strokeDasharray='1';p.style.strokeDashoffset='1';});
+    var dots=[];for(var j=0;j<7;j++)dots.push(el('circle',{r:3.5,fill:'var(--ab-white)',opacity:0},bg));
+    d.g=g;d.parts=parts;d.dots=dots;d.sgn=i%2?-1:1;d.ph=i*1.3;IC.push(d);
+  });
+  // where an icon's resting place / spawn point are right now (they move with their character)
+  function slot(d,tl){var c=CH[d.ch],xo=xoff(c,tl-.1);return [c.cx+xo+d.rel[0],GY-(525.14-271.66)*c.k+d.rel[1]+0];}
+  function spawn(d,tl){var c=CH[d.ch],xo=xoff(c,tl);return stg(c,390.48,271.66,xo);}
+  // ---------- the whole animation as a pure function of time ----------
+  var BLINK=[2.0,4.6,7.2,9.4];
+  function render(t){
+    var tl=((t%LOOP)+LOOP)%LOOP;
+    line.setAttribute('stroke-dashoffset',((SPD*tl)%44).toFixed(2));
+    var hops=[];
+    CH.forEach(function(c,ci){
+      var xo=xoff(c,tl);c.xo=xo;
+      var jh=0,th=0,sx=1,sy=1;
+      if(ci===FLIP.ch){
+        var fu=(tl-FLIP.fs)/FLIP.fd;if(fu>0&&fu<1){jh=150*4*fu*(1-fu);th=360*eio(fu);}
+        var cu=(tl-FLIP.fs+0.22)/0.22;if(cu>0&&cu<1){sy=1-.12*Math.sin(Math.PI*cu);sx=1+.07*Math.sin(Math.PI*cu);}
+        var lu=(tl-FLIP.fs-FLIP.fd)/0.25;if(lu>0&&lu<1){sy=1-.16*Math.sin(Math.PI*lu);sx=1+.1*Math.sin(Math.PI*lu);}
+      }
+      c.jump=jh;
+      c.g.setAttribute('transform','translate('+(c.cx+xo).toFixed(2)+','+(GY-jh).toFixed(2)+') scale('+(c.k*sx).toFixed(4)+' '+(c.k*sy).toFixed(4)+') rotate('+th.toFixed(2)+' 0 -126.74) translate('+(-ICX)+' '+(-ICY)+')');
+      var ph=((tl/0.6)+c.off)%1;
+      var tyA=kf(ph,[[0,0],[.25,2],[.5,0],[.75,-15],[1,0]]),rA=kf(ph,[[0,0],[.25,3],[.5,5],[.75,1],[1,0]]),leg=kf(ph,[[0,-12],[.5,14],[1,-12]]);
+      var tyB=kf(ph,[[0,0],[.25,-7],[.5,0],[.75,-7],[1,0]]),rB=kf(ph,[[0,-5],[.25,0],[.5,5],[.75,0],[1,-5]]),arm=kf(ph,[[0,10],[.5,-10],[1,10]]);
+      c.gA.setAttribute('transform','translate(0,'+tyA.toFixed(2)+') rotate('+rA.toFixed(2)+' 293.66 525.14)');
+      c.stA.setAttribute('transform','rotate('+leg.toFixed(2)+' 293.66 385.02)');
+      c.gB.setAttribute('transform','translate(0,'+tyB.toFixed(2)+') rotate('+rB.toFixed(2)+' 468.8 524.1)');
+      c.stB.setAttribute('transform','rotate('+arm.toFixed(2)+' 468.8 411.78)'.replace('468.8 411.78','390.48 411.78'));
+      c.hop=-tyA*c.k+(c.jump||0);                                                   // how high this character is bouncing (stage units)
+      // eyes: look ahead, glance at the character's own icons as they pop out, blink
+      var look=null;IC.forEach(function(d,i){if(d.ch!==ci)return;var ag=((tl-d.ts)%LOOP+LOOP)%LOOP,w=sm(-.05,.15,ag)*(1-sm(.3,.55,ag));if(w>0.001)look={d:d,w:w};});
+      var bl=1;BLINK.forEach(function(b){var u=(tl-b-ci*.12)/0.17;if(u>0&&u<1)bl=Math.min(bl,1-.92*Math.sin(Math.PI*u));});
+      c.eyes.forEach(function(e){
+        var dx=6,dy=1.5;
+        if(look){var q=stg(c,e.x,e.y,xo),s=slot(look.d,tl),tx=s[0]-q[0],ty=s[1]-q[1],dd=Math.hypot(tx,ty)||1;dx=dx+(9*tx/dd-dx)*look.w;dy=dy+(10*ty/dd-dy)*look.w;}
+        e.pu.setAttribute('transform','translate('+dx.toFixed(2)+','+dy.toFixed(2)+')');
+        e.root.setAttribute('transform','translate(0,'+e.y+') scale(1,'+bl.toFixed(3)+') translate(0,'+(-e.y)+')');
+      });
+    });
+    // design icons: pop out of the character's stem, arc to a spot above it, draw themselves and travel WITH it; later each one pops away and comes back
+    IC.forEach(function(d,n){
+      var c=CH[d.ch],age=((tl-d.ts)%LOOP+LOOP)%LOOP,vis=age<LIFE+0.5;
+      var u=cl(age/0.5,0,1),e=eio(u),m=1-e,s=spawn(d,tl),p=slot(d,tl);
+      var ctl=[(s[0]+p[0])/2+d.sgn*60,Math.min(s[1],p[1])-110];
+      var x=m*m*s[0]+2*m*e*ctl[0]+e*e*p[0],y=m*m*s[1]+2*m*e*ctl[1]+e*e*p[1],sc=0,rot=0,op=0;
+      if(vis){op=1;sc=d.sc*(.25+.75*back(u));rot=(1-eio(u))*d.sgn*300;}
+      if(vis&&u>=1){y+=Math.sin(tl*1.5+d.ph)*4-c.hop*.55;x+=Math.sin(tl*1.1+d.ph)*3;rot+=Math.sin(tl*1.1+d.ph)*3;sc*=1+.025*Math.sin(tl*2+d.ph);}
+      var v=(age-LIFE)/0.5;if(v>0&&vis){sc*=1-eio(v);rot-=eio(v)*d.sgn*220;op=1-sm(.4,1,v);}
+      d.g.setAttribute('transform','translate('+x.toFixed(1)+','+y.toFixed(1)+') rotate('+rot.toFixed(1)+') scale('+Math.max(0,sc).toFixed(3)+')');
+      d.g.setAttribute('opacity',op.toFixed(3));
+      var q=vis?cl((age-.2)/.4,0,1):0;d.parts.forEach(function(pp,k){pp.style.strokeDashoffset=String(1-cl(q*1.4-k*.1,0,1));});
+      var b=cl(age/.4,0,1);
+      d.dots.forEach(function(dot,j){var a=j/7*6.283+n,r=8+46*eio(b);dot.setAttribute('cx',(s[0]+Math.cos(a)*r).toFixed(1));dot.setAttribute('cy',(s[1]+Math.sin(a)*r).toFixed(1));dot.setAttribute('opacity',b>0&&b<1?((1-b)*.8).toFixed(2):0);});
+    });
+  }
+  window.__wkRender=render;
+  // ---------- run (pauses when off-screen, calm when the user prefers reduced motion) ----------
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){render(8.0);return;}
+  var t0=performance.now(),raf=0;
+  function loop(now){render((now-t0)/1000);raf=requestAnimationFrame(loop);}
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){var vis=es[0].isIntersecting;if(vis&&!raf){t0=performance.now()-(window.__wkTp||0)*1000;raf=requestAnimationFrame(loop);}else if(!vis&&raf){window.__wkTp=(performance.now()-t0)/1000;cancelAnimationFrame(raf);raf=0;}},{threshold:0.05}).observe($('wkAb'));}
+  raf=requestAnimationFrame(loop);
+})();
+
 </script>
 </body>
 </html>
