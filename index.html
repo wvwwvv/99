@@ -210,15 +210,15 @@ body{position:relative;margin:0;background:var(--ink);color:var(--paper);font-fa
   .pf,.ct{--sw:min(calc(62*var(--vu)),980px)}
   #portfolio{width:calc(var(--sw) + 113px)}
   #portfolio .pgrid{width:var(--sw)}
-  #services{--tw:min(calc(35*var(--vu)),580px);--tl:calc(51*var(--vu) - var(--tw));--bx:calc(56.5*var(--vu) + 688*var(--u) - var(--tl));--cq:calc(var(--tw)/100);--sw:var(--bx);width:var(--bx);margin-left:calc(var(--tl) - (100vw - var(--w)) / 2 + var(--po))}
+  #services{--tw:min(calc(35*var(--vu)),580px);--tl:calc(51*var(--vu) - var(--tw));--bx:calc(56.5*var(--vu) + 688*var(--u) - var(--tl));--cq:calc(var(--tw)/100);--sw:var(--bx);--lw:calc(688*var(--u)*.78);--ll:calc(56.5*var(--vu) - var(--tl) + 688*var(--u)*.06 - 2.5*var(--vu));--ins:calc(var(--bx) - var(--ll) - var(--lw)*1.114);width:var(--bx);margin-left:calc(var(--tl) - (100vw - var(--w)) / 2 + var(--po))}
   html[lang=ar] #services{--tw:min(calc(40*var(--vu)),660px)}
-  #services .svbox{--bx:var(--sw);border-radius:calc(var(--cq)*10);padding-bottom:calc(var(--cq)*3)}
-  #services .gbar{margin:calc(var(--cq)*7) 0 0 calc(var(--cq)*6)!important;width:calc(var(--cq)*46)!important;height:calc(var(--cq)*10.5)!important;border-radius:calc(var(--cq)*3.4)!important;font-size:calc(var(--cq)*5.2)!important}
-  #services .svlist{gap:calc(var(--cq)*2.6);padding:calc(var(--cq)*6) 0 0 calc(var(--cq)*6)}
+  #services .svbox{--bx:var(--sw);border-radius:calc(var(--cq)*10);padding-bottom:calc(var(--cq)*6.6)}
+  #services .gbar{margin:calc(var(--cq)*7) 0 0 var(--ins)!important;width:calc(var(--cq)*46)!important;height:calc(var(--cq)*10.5)!important;border-radius:calc(var(--cq)*3.4)!important;font-size:calc(var(--cq)*5.2)!important}
+  #services .svlist{gap:calc(var(--cq)*2.6);padding:calc(var(--cq)*6) 0 0 var(--ins)}
   #services .svi{gap:calc(var(--cq)*3)}
   #services .svi-ic{width:calc(var(--cq)*3.5);height:calc(var(--cq)*3.5)}
   #services .svi-t{font-size:calc(var(--cq)*4.2)}
-  #services .svbox>svg{width:calc(688*var(--u)*.78);right:auto;left:calc(56.5*var(--vu) - var(--tl) + 688*var(--u)*.06 - 2.5*var(--vu));top:50%}
+  #services .svbox>svg{width:var(--lw);right:auto;left:var(--ll);top:50%}
   .nav button{font-size:calc(32.9*var(--u))!important}
   #walk #wkAb{--ww:calc(min(calc(62*var(--vu)),980px)/1.12);width:var(--ww);margin:0 0 0 calc(var(--ww)*.061)}
   .more{height:40px}
