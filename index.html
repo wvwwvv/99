@@ -325,6 +325,36 @@ html[lang=ar] .tag{direction:rtl;unicode-bidi:isolate}
 .ctile-ic{width:calc(var(--sw)*.1)!important;height:calc(var(--sw)*.1)!important;margin:0!important}
 .ctile-t{font-size:calc(var(--sw)*.038)!important;font-weight:300!important;text-transform:none}
 .ft-line{width:100%!important;margin-left:0!important}
+
+/* ===== Arabic = mirrored layout (all devices) ===== */
+html[dir=rtl] .capin svg{left:auto;right:calc(99*var(--u))}
+html[dir=rtl] .hero{left:auto;right:calc(104*var(--u))}
+html[dir=rtl] .name{left:auto;right:calc(149*var(--u))}
+html[dir=rtl] .role{left:auto;right:calc(148*var(--u))}
+html[dir=rtl] .big{left:auto;right:calc(80*var(--u))}
+html[dir=rtl] .about{left:auto;right:calc(104*var(--u))}
+html[dir=rtl] .rail-row{direction:ltr}
+html[dir=rtl] .pf-sub{margin-left:0;margin-right:calc(var(--sw)*.0287)}
+html[dir=rtl] .svbox>svg{right:auto;left:6cqw}
+html[dir=rtl] .pc-logo{right:auto;left:-15%}
+html[dir=rtl] .svi{transform-origin:right center}
+html[dir=rtl] .svi-ic svg{transform:scaleX(-1) rotate(90deg)}
+html[dir=rtl] .svi-t,html[dir=rtl] .ctin{text-align:right}
+html[dir=rtl] .ctbar{padding-right:0;padding-left:calc(var(--sw)*.02)}
+html[dir=rtl] .nav button::after{transform:translateX(60%)}
+html[dir=rtl] .nav button.glass::after{transform:translateX(-60%)}
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+  html[dir=rtl] .capin svg{left:auto;right:calc(clamp(56px,calc(7.5*var(--vu)),144px) + var(--po))}
+  html[dir=rtl] .svc{margin-left:0;margin-right:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po))}
+  html[dir=rtl] #services,html[dir=rtl] #portfolio,html[dir=rtl] #walk,html[dir=rtl] #contact{margin-left:0;margin-right:calc(var(--tl) - (100vw - var(--w)) / 2 + var(--po))}
+  html[dir=rtl] #portfolio .pf-sub{margin-left:0;margin-right:calc(var(--cq)*4)}
+  html[dir=rtl] #services .gbar{margin:calc(var(--cq)*7) var(--ins) 0 0!important}
+  html[dir=rtl] #services .svlist{padding:calc(var(--cq)*6) var(--ins) 0 0}
+  html[dir=rtl] #services .svbox>svg{left:auto;right:var(--ll)}
+  html[dir=rtl] #walk #wkAb{margin:0 calc(var(--ww)*.059) 0 0}
+  html[dir=rtl] .about{left:auto;right:calc(51*var(--vu) - min(calc(40*var(--vu)),660px) - (100vw - var(--w)) / 2 + var(--po))}
+  html[dir=rtl] .group{transform-origin:calc(92*var(--u)) calc(695*var(--u));transform:translate(calc(-1*(var(--pw) - clamp(56px,calc(7.5*var(--vu)),144px) - (36*var(--vu) - 688*var(--u)) - (100vw - var(--w)) / 2 + var(--po) - 988*var(--u))),calc(126.5*var(--u))) scale(.76)}
+}
 </style>
 </head>
 <body>
@@ -448,6 +478,10 @@ Design</b></div></div>
 
 <script>
 (function(){
+  try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(e){}
+  window.scrollTo(0,0);
+  window.addEventListener('load',function(){window.scrollTo(0,0)});
+  window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,0)});
   var root=document.documentElement,intro=document.getElementById('intro');
   var cap=document.getElementById('cap'),nav=document.getElementById('nav');
   var homeBtn=document.getElementById('homeBtn'),langBtn=document.getElementById('langBtn');
@@ -632,7 +666,7 @@ Design</b></div></div>
   hl.style.cursor='pointer';hl.addEventListener('click',function(){window.scrollTo(0,0);location.reload()});
   /* logo icon: refresh when on Home, otherwise go back to Home */
   homeBtn.addEventListener('click',function(){
-    if(btns[0].classList.contains('is-active')){location.reload();}
+    if(btns[0].classList.contains('is-active')){window.scrollTo(0,0);location.reload();}
     else{setActive(btns[0]);window.scrollTo({top:0,behavior:'smooth'})}
   });
 
@@ -644,7 +678,7 @@ Design</b></div></div>
   var lang='en';
   function paint(l){
     var t=T[l];lang=l;
-    root.lang=l;root.dir='ltr';
+    root.lang=l;root.dir=t.dir;
     document.getElementById('svcT').textContent=t.nav[1];document.getElementById('svBox').classList.remove('go');document.getElementById('pfT').textContent=t.nav[2];document.getElementById('ctT').textContent=t.nav[3];[].forEach.call(document.querySelectorAll('[data-t]'),function(e){e.textContent=t[e.dataset.t]});tag.textContent=t.tag;role.textContent=t.role;['abT','abS','abP1','abP2'].forEach(function(k){document.getElementById(k).textContent=t[k]});
     btns.forEach(function(b,i){if(i===0){b.setAttribute('aria-label',t.nav[0])}else b.textContent=t.nav[i]});
     langBtn.setAttribute('aria-label',t.label);
