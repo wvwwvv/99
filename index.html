@@ -327,7 +327,6 @@ html[lang=ar] .tag{direction:rtl;unicode-bidi:isolate}
 .ft-line{width:100%!important;margin-left:0!important}
 
 /* ===== Arabic = mirrored layout (all devices) ===== */
-html[dir=rtl] .capin svg{left:auto;right:calc(99*var(--u))}
 html[dir=rtl] .hero{left:auto;right:calc(104*var(--u))}
 html[dir=rtl] .name{left:auto;right:calc(149*var(--u))}
 html[dir=rtl] .role{left:auto;right:calc(148*var(--u))}
@@ -344,7 +343,6 @@ html[dir=rtl] .ctbar{padding-right:0;padding-left:calc(var(--sw)*.02)}
 html[dir=rtl] .nav button::after{transform:translateX(60%)}
 html[dir=rtl] .nav button.glass::after{transform:translateX(-60%)}
 @media (min-width:900px) and (min-aspect-ratio:1/1){
-  html[dir=rtl] .capin svg{left:auto;right:calc(clamp(56px,calc(7.5*var(--vu)),144px) + var(--po))}
   html[dir=rtl] .svc{margin-left:0;margin-right:calc(clamp(56px,calc(7.5*var(--vu)),144px) - (100vw - var(--w)) / 2 + var(--po))}
   html[dir=rtl] #services,html[dir=rtl] #portfolio,html[dir=rtl] #walk,html[dir=rtl] #contact{margin-left:0;margin-right:calc(var(--tl) - (100vw - var(--w)) / 2 + var(--po))}
   html[dir=rtl] #portfolio .pf-sub{margin-left:0;margin-right:calc(var(--cq)*4)}
@@ -382,7 +380,7 @@ html[dir=rtl] .nav button.glass::after{transform:translateX(-60%)}
 
 
 <div class="rail" aria-hidden="false"><div class="rail-row">
-<button class="ci ci-logo" id="homeBtn" type="button" aria-label="99 STUDIO — home">
+<button class="ci ci-logo" id="homeBtn" type="button" aria-label="99 STUDIO â€” home">
   <svg viewBox="98 267 488 263" aria-hidden="true"><path d="M 200.296875 272.667969 C 262.34375 264.367188 319.375 307.9375 327.675781 369.984375 C 335.976562 432.035156 292.40625 489.066406 230.359375 497.367188 C 168.3125 505.667969 111.28125 462.097656 102.980469 400.050781 C 94.675781 338 138.246094 280.972656 200.296875 272.667969 "/><path d="M 328.691406 525.144531 L 258.636719 525.144531 L 258.636719 385.019531 L 328.691406 385.019531 Z M 328.691406 525.144531 "/><path d="M 483.84375 524.128906 C 421.796875 532.433594 364.765625 488.863281 356.464844 426.8125 C 348.164062 364.765625 391.734375 307.734375 453.78125 299.433594 C 515.828125 291.132812 572.859375 334.703125 581.160156 396.75 C 589.464844 458.800781 545.894531 515.828125 483.84375 524.128906 "/><path d="M 355.449219 271.65625 L 425.507812 271.65625 L 425.507812 411.78125 L 355.449219 411.78125 Z M 355.449219 271.65625 "/></svg>
 </button>
 <button class="ci ci-lang" id="langBtn" type="button" aria-label="Language">
@@ -673,7 +671,7 @@ Design</b></div></div>
   /* language toggle EN <-> AR */
   var T={
     en:{dir:'ltr',tag:'99% DESIGN . 1% NORMAL',nav:['HOME','SERVICES','PORTFOLIO','CONTACT'],role:'Graphic Designer',label:'Switch to Arabic',abT:'WELCOME TO\n99 STUDIO',sel:'Selected work',c0:'WhatsApp',c1:'Instagram',c2:'X',c3:'Facebook',c4:'TikTok',c5:'Behance',d0:'Chat with us',d1:'Follow us',d2:'Follow us',d3:'Join us',d4:'Watch our work',d5:'View our work',cp:'2027 99 STUDIO',rt:'All rights reserved',pc0:'Brand\nIdentity',pc1:'Logo\nDesign',pc2:'Motion\nGraphics',pc3:'Social\nMedia',pc4:'Packaging',pc5:'UI\nDesign',abS:'Where Vision Meets Creativity',abP1:'WE ARE A DIGITAL CREATIVE STUDIO SPECIALIZING IN VISUAL IDENTITY, LOGO DESIGN, GRAPHIC DESIGN, AND ADVERTISING. WE HELP BRANDS BUILD A DISTINCTIVE IDENTITY AND STRENGTHEN THEIR PRESENCE THROUGH CREATIVE DESIGNS WITH PURPOSE.',abP2:'WORKING ENTIRELY ONLINE, WE COLLABORATE WITH CLIENTS WORLDWIDE TO TRANSFORM IDEAS INTO IMPACTFUL VISUAL EXPERIENCES.'},
-    ar:{dir:'rtl',tag:'\u206799% تصميم . 1% عادي\u2069',nav:['الرئيسية','خدماتنا','أعمالنا','تواصل'],role:'مصمم جرافيك',label:'التبديل إلى الإنجليزية',abT:'أهلاً بك في\n\u206699 STUDIO\u2069',sel:'أعمال مختارة',c0:'واتساب',c1:'انستغرام',c2:'X',c3:'فيسبوك',c4:'تيك توك',c5:'بيهانس',d0:'راسلنا',d1:'تابعنا',d2:'تابعنا',d3:'انضم إلينا',d4:'شاهد أعمالنا',d5:'شاهد أعمالنا',cp:'2027 99 STUDIO',rt:'جميع الحقوق محفوظة',pc0:'الهوية\nالبصرية',pc1:'تصميم\nالشعارات',pc2:'موشن\nجرافيك',pc3:'السوشال\nميديا',pc4:'تصميم\nالعبوات',pc5:'تصميم\nالواجهات',abS:'حيث تلتقي الرؤية بالإبداع',abP1:'نحن استوديو إبداعي رقمي متخصص في الهوية البصرية وتصميم الشعارات والتصميم الجرافيكي والإعلانات. نساعد العلامات التجارية على بناء هوية مميزة وتعزيز حضورها من خلال تصاميم إبداعية ذات هدف.',abP2:'نعمل بالكامل عبر الإنترنت، ونتعاون مع عملاء حول العالم لتحويل الأفكار إلى تجارب بصرية مؤثرة.'}
+    ar:{dir:'rtl',tag:'\u206799% طھطµظ?ظ?ظ? . 1% ط?ط?ط?ظ?\u2069',nav:['ط?ظ?ط?ط?ظ?ط?ظ?ط?','ط?ط?ظ?ط?طھظ?ط?','ط?ط?ظ?ط?ظ?ظ?ط?','طھظ?ط?طµظ?'],role:'ظ?طµظ?ظ? ط?ط?ط?ظ?ظ?ظ?',label:'ط?ظ?طھط?ط?ظ?ظ? ط?ظ?ظ? ط?ظ?ط?ظ?ط?ظ?ظ?ط?ظ?ط?',abT:'ط?ظ?ظ?ط?ظ? ط?ظ? ظ?ظ?\n\u206699 STUDIO\u2069',sel:'ط?ط?ظ?ط?ظ? ظ?ط?طھط?ط?ط?',c0:'ظ?ط?طھط?ط?ط?',c1:'ط?ظ?ط?طھط؛ط?ط?ظ?',c2:'X',c3:'ظ?ظ?ط?ط?ظ?ظ?',c4:'طھظ?ظ? طھظ?ظ?',c5:'ط?ظ?ظ?ط?ظ?ط?',d0:'ط?ط?ط?ظ?ظ?ط?',d1:'طھط?ط?ط?ظ?ط?',d2:'طھط?ط?ط?ظ?ط?',d3:'ط?ظ?ط?ظ? ط?ظ?ظ?ظ?ط?',d4:'ط?ط?ظ?ط? ط?ط?ظ?ط?ظ?ظ?ط?',d5:'ط?ط?ظ?ط? ط?ط?ظ?ط?ظ?ظ?ط?',cp:'2027 99 STUDIO',rt:'ط?ظ?ظ?ط? ط?ظ?ط?ظ?ظ?ظ? ظ?ط?ظ?ظ?ط?ط?',pc0:'ط?ظ?ظ?ظ?ظ?ط?\nط?ظ?ط?طµط?ظ?ط?',pc1:'طھطµظ?ظ?ظ?\nط?ظ?ط?ط?ط?ط?ط?طھ',pc2:'ظ?ظ?ط?ظ?\nط?ط?ط?ظ?ظ?ظ?',pc3:'ط?ظ?ط?ظ?ط?ط?ظ?\nظ?ظ?ط?ظ?ط?',pc4:'طھطµظ?ظ?ظ?\nط?ظ?ط?ط?ظ?ط?طھ',pc5:'طھطµظ?ظ?ظ?\nط?ظ?ظ?ط?ط?ظ?ط?طھ',abS:'ط?ظ?ط? طھظ?طھظ?ظ? ط?ظ?ط?ط?ظ?ط? ط?ط?ظ?ط?ط?ط?ط?ط?',abP1:'ظ?ط?ظ? ط?ط?طھظ?ط?ظ?ظ? ط?ط?ط?ط?ط?ظ? ط?ظ?ظ?ظ? ظ?طھط?طµطµ ظ?ظ? ط?ظ?ظ?ظ?ظ?ط? ط?ظ?ط?طµط?ظ?ط? ظ?طھطµظ?ظ?ظ? ط?ظ?ط?ط?ط?ط?ط?طھ ظ?ط?ظ?طھطµظ?ظ?ظ? ط?ظ?ط?ط?ط?ظ?ظ?ظ?ظ? ظ?ط?ظ?ط?ط?ظ?ط?ظ?ط?طھ. ظ?ط?ط?ط?ط? ط?ظ?ط?ظ?ط?ظ?ط?طھ ط?ظ?طھط?ط?ط?ظ?ط? ط?ظ?ظ? ط?ظ?ط?ط? ظ‡ظˆظٹط© ظ…ظ…ظٹط²ط© ظˆطھط¹ط²ظٹط² ط­ط¶ظˆط±ظ‡ط§ ظ…ظ† ط®ظ„ط§ظ„ طھطµط§ظ…ظٹظ… ط¥ط¨ط¯ط§ط¹ظٹط© ط°ط§طھ ظ‡ط¯ظپ.',abP2:'ظ†ط¹ظ…ظ„ ط¨ط§ظ„ظƒط§ظ…ظ„ ط¹ط¨ط± ط§ظ„ط¥ظ†طھط±ظ†طھطŒ ظˆظ†طھط¹ط§ظˆظ† ظ…ط¹ ط¹ظ…ظ„ط§ط، ط­ظˆظ„ ط§ظ„ط¹ط§ظ„ظ… ظ„طھط­ظˆظٹظ„ ط§ظ„ط£ظپظƒط§ط± ط¥ظ„ظ‰ طھط¬ط§ط±ط¨ ط¨طµط±ظٹط© ظ…ط¤ط«ط±ط©.'}
   };
   var lang='en';
   function paint(l){
@@ -698,7 +696,7 @@ Design</b></div></div>
 /* portfolio viewer: reads data/portfolio.json (managed from admin.html) */
 (function(){
   var DATA=null,loaded=false,lv=0,cat=-1,brand=-1;
-  var L={en:{back:'Back',empty:'Coming soon'},ar:{back:'رجوع',empty:'قريباً'}};
+  var L={en:{back:'Back',empty:'Coming soon'},ar:{back:'ط±ط¬ظˆط¹',empty:'ظ‚ط±ظٹط¨ط§ظ‹'}};
   var pv=document.createElement('div');pv.id='pv';pv.setAttribute('role','dialog');pv.setAttribute('aria-modal','true');
   pv.innerHTML='<button type="button" class="pv-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>'+
    '<section class="svc pf pvhead"><div class="pftop"><div class="gl gbar gwide"><span class="pv-t"></span></div></div><p class="pf-sub"></p><div class="pgrid pv-body"></div></section>'+
