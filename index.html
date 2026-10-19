@@ -262,6 +262,13 @@ html[dir=rtl] .pv-back svg{transform:scaleX(-1)}
 #pvl{position:fixed;inset:0;z-index:100001;background:rgba(10,10,10,.96);display:none;align-items:center;justify-content:center;padding:16px}
 #pvl.on{display:flex}
 #pvl img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px}
+.pcard.plight{background:#f2f2f2!important;border-color:rgba(0,0,0,.15)!important;box-shadow:0 8px 22px rgba(0,0,0,.35)!important}
+.pcard.plight .pc-t{color:#181818}
+.pcard.pvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pplay{position:absolute;inset-inline-end:8%;bottom:8%;width:14%;aspect-ratio:1;border-radius:50%;background:rgba(24,24,24,.72);display:grid;place-items:center}
+.pplay::after{content:"";width:0;height:0;border-style:solid;border-width:.42em 0 .42em .7em;border-color:transparent transparent transparent #f2f2f2;font-size:min(3.2vw,18px);margin-inline-start:.15em}
+html[dir=rtl] .pplay::after{transform:scaleX(-1)}
+#pvl video{max-width:100%;max-height:100%;border-radius:12px;display:none}
 body.pvlock{overflow:hidden}
 
 .svlist{display:flex;flex-direction:column;gap:2.6cqw;padding:6cqw 4cqw 0 4cqw}
@@ -693,44 +700,61 @@ Design</b></div></div>
 })();
 </script>
 <script>
-/* portfolio viewer: reads data/portfolio.json (managed from admin.html) */
+/* portfolio viewer: reads https://media.99studiops.com/portfolio.json (managed from the admin panel) */
 (function(){
-  var DATA=null,loaded=false,lv=0,cat=-1,brand=-1;
+  var SRC='https://media.99studiops.com/portfolio.json';
+  var KEYS=['brand-identity','logo-design','motion-graphics','social-media','packaging','ui-design'];
+  var DATA=null,lv=0,cat=-1,brand=-1,cur=[];
   var L={en:{back:'Back',empty:'Coming soon'},ar:{back:'رجوع',empty:'قريباً'}};
   var pv=document.createElement('div');pv.id='pv';pv.setAttribute('role','dialog');pv.setAttribute('aria-modal','true');
   pv.innerHTML='<button type="button" class="pv-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>'+
    '<section class="svc pf pvhead"><div class="pftop"><div class="gl gbar gwide"><span class="pv-t"></span></div></div><p class="pf-sub"></p><div class="pgrid pv-body"></div></section>'+
    '<section class="svc pvfoot"></section>';
-  var lb=document.createElement('div');lb.id='pvl';lb.innerHTML='<img alt="">';
+  var lb=document.createElement('div');lb.id='pvl';lb.innerHTML='<img alt=""><video controls playsinline></video>';
   document.body.appendChild(pv);document.body.appendChild(lb);
   var $=function(s){return pv.querySelector(s)};
   var title=$('.pv-t'),sub=$('.pf-sub'),body=$('.pv-body'),back=$('.pv-back');
-  function t(k){return (L[document.documentElement.lang]||L.en)[k]}
+  var limg=lb.querySelector('img'),lvid=lb.querySelector('video');
+  function lang(){return document.documentElement.lang==='ar'?'ar':'en'}
+  function t(k){return L[lang()][k]}
   function load(cb){
-    if(loaded)return cb();
-    fetch('data/portfolio.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(j){DATA=j;loaded=true;cb()}).catch(function(){loaded=true;cb()});
+    if(DATA)return cb();
+    fetch(SRC+'?v='+Math.floor(Date.now()/60000),{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(j){DATA=j;cb()}).catch(function(){cb()});
   }
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function brands(i){var c=DATA&&DATA.categories&&DATA.categories[i];return (c&&c.brands)||[]}
+  function items(i){var c=DATA&&DATA.categories&&DATA.categories[KEYS[i]];return c||[]}
+  function bname(b){return (lang()==='ar'&&b.title_ar)?b.title_ar:(b.title_en||'')}
   function catName(){var b=document.querySelectorAll('.pgrid .pcard b')[cat];return (b?b.textContent:'').replace(/\s+/g,' ').trim()}
+  function mediaHTML(list){
+    cur=list;
+    return list.map(function(m,i){
+      if(m.kind==='video')return '<div class="pcard pimg pvid" data-m="'+i+'" role="button" tabindex="0">'+(m.poster?'<img loading="lazy" src="'+esc(m.poster)+'" alt="">':'<video src="'+esc(m.src)+'#t=0.1" preload="metadata" muted playsinline></video>')+'<span class="pplay"></span></div>';
+      return '<div class="pcard pimg" data-m="'+i+'" role="button" tabindex="0"><img loading="lazy" src="'+esc(m.src)+'" alt=""></div>';
+    }).join('');
+  }
   function render(){
     back.setAttribute('aria-label',t('back'));
-    var h='',cn=catName(),b=lv===2?(brands(cat)[brand]||{}):null;
-    title.textContent=lv===2?(b.name||cn):cn;
+    var h='',cn=catName(),isBrand=cat===0,b=lv===2?(items(0)[brand]||{}):null;
+    title.textContent=lv===2?(bname(b)||cn):cn;
     sub.textContent=lv===2?cn:(document.getElementById('pfS')||{}).textContent||'';
-    if(lv===1){
-      var bs=brands(cat);
-      h=bs.length?bs.map(function(x,i){return '<div class="pcard" data-b="'+i+'" role="button" tabindex="0">'+(x.logo?'<div class="pv-lg"><img src="'+esc(x.logo)+'" alt=""></div>':'')+'<div class="pc-t"><b>'+esc(x.name||'')+'</b></div></div>'}).join(''):'<div class="pv-empty">'+t('empty')+'</div>';
+    if(isBrand&&lv===1){
+      var bs=items(0);
+      h=bs.length?bs.map(function(x,i){return '<div class="pcard'+(x.light?' plight':'')+'" data-b="'+i+'" role="button" tabindex="0">'+(x.logo?'<div class="pv-lg"><img src="'+esc(x.logo)+'" alt=""></div>':'')+'<div class="pc-t"><b>'+esc(bname(x))+'</b></div></div>'}).join(''):'<div class="pv-empty">'+t('empty')+'</div>';
     }else{
-      var im=b.images||[];
-      h=im.length?im.map(function(s){return '<div class="pcard pimg" data-im><img loading="lazy" src="'+esc(s)+'" alt=""></div>'}).join(''):'<div class="pv-empty">'+t('empty')+'</div>';
+      var list=lv===2?(b.works||[]):items(cat);
+      h=list.length?mediaHTML(list):'<div class="pv-empty">'+t('empty')+'</div>';
     }
     body.innerHTML=h;
     pv.scrollTop=0;
   }
+  function closeLb(){lb.classList.remove('on');try{lvid.pause()}catch(e){}lvid.removeAttribute('src');lvid.load&&lvid.load()}
+  function openLb(m){
+    if(m.kind==='video'){limg.style.display='none';lvid.style.display='block';lvid.src=m.src;lvid.poster=m.poster||'';lb.classList.add('on');var p=lvid.play();if(p&&p.catch)p.catch(function(){})}
+    else{lvid.style.display='none';limg.style.display='block';limg.src=m.src;lb.classList.add('on')}
+  }
   function show(l,push){
     lv=l;
-    if(l===0){pv.classList.remove('on');document.body.classList.remove('pvlock');lb.classList.remove('on');return}
+    if(l===0){pv.classList.remove('on');document.body.classList.remove('pvlock');closeLb();return}
     pv.classList.add('on');document.body.classList.add('pvlock');
     render();
     if(push)history.pushState({pv:l},'');
@@ -743,18 +767,18 @@ Design</b></div></div>
   body.addEventListener('click',function(e){
     var b=e.target.closest('[data-b]');
     if(b){brand=+b.dataset.b;show(2,true);return}
-    var im=e.target.closest('[data-im] img');
-    if(im){lb.firstChild.src=im.src;lb.classList.add('on')}
+    var m=e.target.closest('[data-m]');
+    if(m&&cur[+m.dataset.m])openLb(cur[+m.dataset.m]);
   });
-  body.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-b]')){e.preventDefault();e.target.click()}});
-  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  body.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-b],[data-m]')){e.preventDefault();e.target.click()}});
+  lb.addEventListener('click',function(e){if(e.target===lvid)return;closeLb()});
   back.addEventListener('click',function(){if(history.state&&history.state.pv)history.back();else show(Math.max(0,lv-1),false)});
   window.addEventListener('popstate',function(e){
-    lb.classList.remove('on');
+    closeLb();
     var l=(e.state&&e.state.pv)||0;
     if(l!==lv)show(l,false);
   });
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lv>0){if(lb.classList.contains('on'))lb.classList.remove('on');else back.click()}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lv>0){if(lb.classList.contains('on'))closeLb();else back.click()}});
 })();
 </script>
 <script>
