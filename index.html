@@ -269,6 +269,15 @@ html[dir=rtl] .pv-back svg{transform:scaleX(-1)}
 .pplay::after{content:"";width:0;height:0;border-style:solid;border-width:.42em 0 .42em .7em;border-color:transparent transparent transparent #f2f2f2;font-size:min(3.2vw,18px);margin-inline-start:.15em}
 html[dir=rtl] .pplay::after{transform:scaleX(-1)}
 #pvl video{max-width:100%;max-height:100%;border-radius:12px;display:none}
+.pcw{min-width:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pcw .pcard{width:100%}
+.pcw .pv-lg{padding:16%}
+@media (hover:hover){.pcw:hover .pcard{transform:translateY(-4px)}}
+.pcn{display:block;margin-top:calc(var(--sw)*.025);text-align:center;font-weight:700;text-transform:uppercase;font-size:calc(var(--sw)*.036);line-height:1.15;color:var(--paper);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pv .pv-body.pv-wide{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pv-wide .pcard.pimg{aspect-ratio:16/9}
+.pv-sq .pcard.pimg{aspect-ratio:1}
+.pv-sq .pcard.pimg img{object-fit:contain;padding:8%;box-sizing:border-box}
 body.pvlock{overflow:hidden}
 
 .svlist{display:flex;flex-direction:column;gap:2.6cqw;padding:6cqw 4cqw 0 4cqw}
@@ -739,11 +748,12 @@ Design</b></div></div>
     sub.textContent=lv===2?cn:(document.getElementById('pfS')||{}).textContent||'';
     if(isBrand&&lv===1){
       var bs=items(0);
-      h=bs.length?bs.map(function(x,i){return '<div class="pcard'+(x.light?' plight':'')+'" data-b="'+i+'" role="button" tabindex="0">'+(x.logo?'<div class="pv-lg"><img src="'+esc(x.logo)+'" alt=""></div>':'')+'<div class="pc-t"><b>'+esc(bname(x))+'</b></div></div>'}).join(''):'<div class="pv-empty">'+t('empty')+'</div>';
+      h=bs.length?bs.map(function(x,i){return '<div class="pcw" data-b="'+i+'" role="button" tabindex="0"><div class="pcard'+(x.light?' plight':'')+'">'+(x.logo?'<div class="pv-lg"><img src="'+esc(x.logo)+'" alt=""></div>':'')+'</div><b class="pcn" dir="auto">'+esc(bname(x))+'</b></div>'}).join(''):'<div class="pv-empty">'+t('empty')+'</div>';
     }else{
       var list=lv===2?(b.works||[]):items(cat);
       h=list.length?mediaHTML(list):'<div class="pv-empty">'+t('empty')+'</div>';
     }
+    body.className='pgrid pv-body '+((isBrand&&lv===1)?'pv-brands':(lv===1&&cat===1)?'pv-sq':'pv-wide');
     body.innerHTML=h;
     pv.scrollTop=0;
   }
