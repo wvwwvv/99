@@ -263,7 +263,7 @@ html[dir=rtl] .pv-back svg{transform:scaleX(-1)}
 #pvl.on{opacity:1;visibility:visible;transition:opacity .38s ease}
 #pvl img,#pvl video{transform:scale(.92) translateY(18px);transition:transform .5s cubic-bezier(.2,.85,.25,1)}
 #pvl.on img,#pvl.on video{transform:none}
-#pvl .pvl-back{position:absolute;z-index:2;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;left:auto;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:linear-gradient(135deg,#4a4a4a,#181818);color:var(--paper);display:none;place-items:center;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent;transition:transform .25s}
+#pvl .pvl-back{position:absolute;z-index:2;top:calc(env(safe-area-inset-top,0px) + 4px);right:14px;left:auto;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:linear-gradient(135deg,#4a4a4a,#181818);color:var(--paper);display:none;place-items:center;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent;transition:transform .25s}
 #pvl.isv .pvl-back{display:grid;animation:pvlbIn .55s cubic-bezier(.2,.9,.25,1.2) .15s backwards}
 #pvl .pvl-back svg{width:20px;height:20px;transition:transform .3s}
 html[dir=rtl] #pvl .pvl-back svg{transform:scaleX(-1)}
@@ -298,6 +298,8 @@ body.pvlock{overflow:hidden}
   #pv .pvhead .pf-sub{margin-left:var(--pvsl);font-size:var(--pvsf)}
   html[dir=rtl] #pv .pvhead .pf-sub{margin-left:0;margin-right:var(--pvsl)}
   #pv .pv-body{gap:var(--pvgap)}
+  .pv-back{right:36px}
+  #pvl .pvl-back{right:36px}
 }
 
 .svlist{display:flex;flex-direction:column;gap:2.6cqw;padding:6cqw 4cqw 0 4cqw}
@@ -325,8 +327,8 @@ html[lang=ar] .tag{direction:rtl;unicode-bidi:isolate}
 .capin svg.hl{cursor:pointer}
 #services{padding-top:calc(var(--gap) - 55*var(--u))}
 @media not all and (min-width:900px) and (min-aspect-ratio:1/1){
-  #services .svbox{padding-bottom:calc(3cqw + 65*var(--u))}
-  #services .svbox>svg{top:calc(17.5cqw + (100% - 17.5cqw - 65*var(--u))/2)}
+  #services .svbox{padding-bottom:calc(3cqw + 25*var(--u))}
+  #services .svbox>svg{top:calc(17.5cqw + (100% - 17.5cqw - 25*var(--u))/2)}
 }
 #portfolio{padding-top:calc(var(--gap) - 45*var(--u))}
 
